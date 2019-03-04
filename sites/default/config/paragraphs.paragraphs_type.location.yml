@@ -1,0 +1,9 @@
+uuid: 1d6f96cd-4d0a-4da7-a1a1-930af0075d8b
+langcode: en
+status: true
+dependencies: {  }
+id: location
+label: Location
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

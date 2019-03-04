@@ -1,0 +1,23 @@
+uuid: 1509036e-0fe5-43a4-aa7a-ecacb1ec41e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: service
+label: Service
+type: 'canonical_entities:taxonomy_term'
+pattern: 'services/[term:name]'
+selection_criteria:
+  5aae9fb4-9b70-422f-b516-4f6c5c0f93f8:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      service_type: service_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 5aae9fb4-9b70-422f-b516-4f6c5c0f93f8
+selection_logic: and
+weight: -5
+relationships: {  }

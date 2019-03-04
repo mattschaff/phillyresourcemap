@@ -14,8 +14,8 @@ third_party_settings:
     weight: 0
     geocode_field: field_location_address
     reverse_geocode_field: ''
-    hidden: false
-    disabled: false
+    hidden: true
+    disabled: true
     plugins:
       - googlemaps
     dumper: geolocation

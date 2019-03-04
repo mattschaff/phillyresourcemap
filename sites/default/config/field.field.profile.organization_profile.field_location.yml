@@ -1,0 +1,28 @@
+uuid: cfeaf34a-a572-4e94-8ef5-a746648b738b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_location
+    - node.type.location
+    - profile.type.organization_profile
+id: profile.organization_profile.field_location
+field_name: field_location
+entity_type: profile
+bundle: organization_profile
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

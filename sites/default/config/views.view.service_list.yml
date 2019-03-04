@@ -144,7 +144,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: 'btn bg-primary btn-lg btn-block'
+            link_class: 'btn btn-primary btn-lg btn-block'
             prefix: ''
             suffix: '<br/>'
             target: ''
@@ -245,7 +245,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: service-list
+      path: services
     cache_metadata:
       max-age: -1
       contexts:
