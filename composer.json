@@ -10,7 +10,8 @@
         "drupal/geocoder": "^2.1",
         "drupal/address": "^1.4",
         "drupal/geolocation": "^1.11",
-        "drupal/paragraphs": "^1.6"
+        "drupal/paragraphs": "^1.6",
+        "drupal/time_field": "^1.10"
     },
     "replace": {
         "drupal/core": "^8.6"
