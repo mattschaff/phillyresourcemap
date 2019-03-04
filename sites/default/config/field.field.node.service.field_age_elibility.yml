@@ -1,0 +1,29 @@
+uuid: 39d3c88e-ea90-4ffb-aeac-e4bcff359de1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_age_elibility
+    - node.type.service
+    - taxonomy.vocabulary.age_eligibility
+id: node.service.field_age_elibility
+field_name: field_age_elibility
+entity_type: node
+bundle: service
+label: 'Age Elibility'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      age_eligibility: age_eligibility
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

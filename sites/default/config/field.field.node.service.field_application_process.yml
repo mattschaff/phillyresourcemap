@@ -1,0 +1,21 @@
+uuid: f4df4654-74c3-489b-aed5-b8fd2967465f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_application_process
+    - node.type.service
+  module:
+    - text
+id: node.service.field_application_process
+field_name: field_application_process
+entity_type: node
+bundle: service
+label: 'Application Process'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

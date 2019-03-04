@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_description
     - field.field.node.location.field_location_geolocation
-    - field.field.node.location.field_location_name
     - node.type.location
   module:
     - address
@@ -27,14 +26,14 @@ content:
     region: content
   field_location_description:
     weight: 102
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_location_geolocation:
     weight: 104
-    label: above
+    label: hidden
     settings:
       set_marker: '1'
       title: ''
@@ -64,14 +63,6 @@ content:
       common_map: ''
     third_party_settings: {  }
     type: geolocation_map
-    region: content
-  field_location_name:
-    weight: 101
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   links:
     weight: 100

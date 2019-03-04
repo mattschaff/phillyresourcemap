@@ -1,0 +1,28 @@
+uuid: 4389faaf-c6d3-4ea5-97a3-b074516f13fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_location
+    - node.type.location
+    - node.type.service
+id: node.service.field_associated_location
+field_name: field_associated_location
+entity_type: node
+bundle: service
+label: 'Associated Location'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

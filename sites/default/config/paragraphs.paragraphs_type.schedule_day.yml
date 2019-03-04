@@ -1,0 +1,9 @@
+uuid: 4519dcef-72f4-4e4f-b3e4-bcbd533a81e2
+langcode: en
+status: true
+dependencies: {  }
+id: schedule_day
+label: 'Schedule Day'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

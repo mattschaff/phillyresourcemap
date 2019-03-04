@@ -1,0 +1,21 @@
+uuid: 90fffaaa-6f83-49b5-8709-095cfeb1602e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_day
+    - paragraphs.paragraphs_type.schedule_day
+  module:
+    - options
+id: paragraph.schedule_day.field_day
+field_name: field_day
+entity_type: paragraph
+bundle: schedule_day
+label: Day
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

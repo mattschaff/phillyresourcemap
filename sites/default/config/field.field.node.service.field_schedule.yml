@@ -1,0 +1,31 @@
+uuid: 38353b56-eee4-4dae-bc53-9d5faa8953b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_schedule
+    - node.type.service
+    - paragraphs.paragraphs_type.schedule_day
+  module:
+    - entity_reference_revisions
+id: node.service.field_schedule
+field_name: field_schedule
+entity_type: node
+bundle: service
+label: Schedule
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      schedule_day: schedule_day
+    target_bundles_drag_drop:
+      schedule_day:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

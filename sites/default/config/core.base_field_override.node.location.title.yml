@@ -1,18 +1,17 @@
-uuid: 8fce1543-984c-4d09-b149-5fbad61c0bf4
+uuid: d2e4cef6-b751-4520-9865-c38704cbc045
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_name
     - node.type.location
-id: node.location.field_location_name
-field_name: field_location_name
+id: node.location.title
+field_name: title
 entity_type: node
 bundle: location
 label: 'Location Name'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

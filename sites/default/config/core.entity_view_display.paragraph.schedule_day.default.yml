@@ -1,0 +1,33 @@
+uuid: 408bcc3a-ed9e-43f4-841f-f3b3298a1ca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.schedule_day.field_day
+    - field.field.paragraph.schedule_day.field_time
+    - paragraphs.paragraphs_type.schedule_day
+  module:
+    - options
+    - time_field
+id: paragraph.schedule_day.default
+targetEntityType: paragraph
+bundle: schedule_day
+mode: default
+content:
+  field_day:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_time:
+    weight: 1
+    label: above
+    settings:
+      time_format: 'h:i a'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    type: time_range_formatter
+    region: content
+hidden: {  }

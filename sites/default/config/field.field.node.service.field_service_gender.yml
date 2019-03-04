@@ -1,0 +1,29 @@
+uuid: 938ae43f-558e-495a-ad03-86bf3fb7e62a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_gender
+    - node.type.service
+    - taxonomy.vocabulary.gender_eligibility
+id: node.service.field_service_gender
+field_name: field_service_gender
+entity_type: node
+bundle: service
+label: 'Gender Eligibility'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gender_eligibility: gender_eligibility
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 5829f969-b02f-4e83-a241-744c1221f4f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_time
+    - paragraphs.paragraphs_type.schedule_day
+  module:
+    - time_field
+id: paragraph.schedule_day.field_time
+field_name: field_time
+entity_type: paragraph
+bundle: schedule_day
+label: Time
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time_range

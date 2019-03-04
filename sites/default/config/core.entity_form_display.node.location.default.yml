@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_description
     - field.field.node.location.field_location_geolocation
-    - field.field.node.location.field_location_name
     - node.type.location
   module:
     - address
@@ -73,14 +72,6 @@ content:
       allow_override_map_settings: 0
     third_party_settings: {  }
     type: geolocation_googlegeocoder
-    region: content
-  field_location_name:
-    weight: 121
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   path:
     type: path

@@ -1,0 +1,20 @@
+uuid: 73582b56-55b2-428c-afe0-7ad97daf2544
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_age_elibility
+field_name: field_age_elibility
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

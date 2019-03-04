@@ -1,4 +1,4 @@
-uuid: df64594b-741e-4219-8f68-d3ddcc84c829
+uuid: a8256bb0-4259-4f5e-bcc6-2740cdb1880e
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,10 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
-name: Location
-type: location
+    available_menus: {  }
+    parent: ''
+name: Service
+type: service
 description: ''
 help: ''
 new_revision: true
