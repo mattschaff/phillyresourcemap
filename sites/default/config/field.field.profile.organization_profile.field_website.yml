@@ -1,0 +1,23 @@
+uuid: f983556c-72ba-4641-8051-9e821e5d0f68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_website
+    - profile.type.organization_profile
+  module:
+    - link
+id: profile.organization_profile.field_website
+field_name: field_website
+entity_type: profile
+bundle: organization_profile
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

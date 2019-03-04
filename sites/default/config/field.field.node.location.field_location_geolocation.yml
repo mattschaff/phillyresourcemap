@@ -1,0 +1,38 @@
+uuid: 94dce5a8-3d7f-42e6-ad71-b64f0e3e3269
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_geolocation
+    - node.type.location
+  module:
+    - geocoder_field
+    - geolocation
+third_party_settings:
+  geocoder_field:
+    method: source
+    weight: 0
+    geocode_field: field_location_address
+    reverse_geocode_field: ''
+    hidden: false
+    disabled: false
+    plugins:
+      - googlemaps
+    dumper: geolocation
+    delta_handling: s_to_m
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.location.field_location_geolocation
+field_name: field_location_geolocation
+entity_type: node
+bundle: location
+label: 'Location Geolocation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

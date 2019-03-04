@@ -1,0 +1,53 @@
+uuid: 3afc15b3-f46d-4471-b7cf-1bd323079ce1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.organization_profile.field_description
+    - field.field.profile.organization_profile.field_organization_name
+    - field.field.profile.organization_profile.field_phone_number
+    - field.field.profile.organization_profile.field_website
+    - profile.type.organization_profile
+  module:
+    - link
+    - text
+id: profile.organization_profile.default
+targetEntityType: profile
+bundle: organization_profile
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_organization_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone_number:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_website:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

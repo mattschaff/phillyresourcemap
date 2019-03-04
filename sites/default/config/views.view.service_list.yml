@@ -144,7 +144,7 @@ display:
             trim_whitespace: false
             alt: ''
             rel: ''
-            link_class: 'btn bg-primary btn-block'
+            link_class: 'btn bg-primary btn-lg btn-block'
             prefix: ''
             suffix: '<br/>'
             target: ''

@@ -1,0 +1,81 @@
+uuid: bd46191d-5b36-4f81-8453-3adbba9d6fe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_location_address
+    - field.field.node.location.field_location_description
+    - field.field.node.location.field_location_geolocation
+    - field.field.node.location.field_location_name
+    - node.type.location
+  module:
+    - address
+    - geolocation
+    - text
+    - user
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_location_address:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_location_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location_geolocation:
+    weight: 104
+    label: above
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 400px
+        width: 100%
+        type: ROADMAP
+        zoom: '14'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_location_name:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

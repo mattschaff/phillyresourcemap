@@ -1,0 +1,51 @@
+uuid: dca3c3c9-6189-4d1a-a659-1bbc4dbebbb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.organization_profile.field_description
+    - field.field.profile.organization_profile.field_organization_name
+    - field.field.profile.organization_profile.field_phone_number
+    - field.field.profile.organization_profile.field_website
+    - profile.type.organization_profile
+  module:
+    - link
+    - telephone
+    - text
+id: profile.organization_profile.default
+targetEntityType: profile
+bundle: organization_profile
+mode: default
+content:
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_organization_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_website:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden: {  }

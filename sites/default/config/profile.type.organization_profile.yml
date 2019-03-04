@@ -1,0 +1,15 @@
+uuid: 55368b72-1a22-4c4b-ab8c-7e1c69f0eaad
+langcode: en
+status: true
+dependencies: {  }
+id: organization_profile
+label: 'Organization Profile'
+registration: false
+multiple: false
+roles:
+  organization: organization
+  authenticated: '0'
+  administrator: '0'
+weight: 0
+use_revisions: false
+description: ''
