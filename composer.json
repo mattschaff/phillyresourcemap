@@ -11,7 +11,8 @@
         "drupal/address": "^1.4",
         "drupal/geolocation": "^1.11",
         "drupal/paragraphs": "^1.6",
-        "drupal/time_field": "^1.10"
+        "drupal/time_field": "^1.10",
+        "drupal/inline_entity_form": "^1.0@RC"
     },
     "replace": {
         "drupal/core": "^8.6"
