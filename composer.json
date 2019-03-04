@@ -9,7 +9,8 @@
         "drupal/admin_toolbar": "^1.26",
         "drupal/geocoder": "^2.1",
         "drupal/address": "^1.4",
-        "drupal/geolocation": "^1.11"
+        "drupal/geolocation": "^1.11",
+        "drupal/paragraphs": "^1.6"
     },
     "replace": {
         "drupal/core": "^8.6"
