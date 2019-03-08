@@ -18,21 +18,21 @@ bundle: location
 mode: default
 content:
   field_location_address:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
   field_location_description:
-    weight: 102
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_location_geolocation:
-    weight: 104
+    weight: 2
     label: hidden
     settings:
       set_marker: '1'
@@ -65,7 +65,7 @@ content:
     type: geolocation_map
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

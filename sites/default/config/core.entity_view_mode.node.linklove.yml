@@ -1,0 +1,10 @@
+uuid: 4b2328c0-7371-48e6-bb70-417f09cc554e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.linklove
+label: LinkLove
+targetEntityType: node
+cache: true
