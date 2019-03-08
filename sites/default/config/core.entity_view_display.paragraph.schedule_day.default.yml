@@ -16,17 +16,17 @@ mode: default
 content:
   field_day:
     weight: 0
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_time:
     weight: 1
-    label: above
+    label: hidden
     settings:
-      time_format: 'h:i a'
-      timerange_format: 'start ~ end'
+      timerange_format: 'start - end'
+      time_format: 'g:i a'
     third_party_settings: {  }
     type: time_range_formatter
     region: content

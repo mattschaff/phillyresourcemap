@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.linklove
   module:
     - node
     - taxonomy
@@ -150,14 +150,14 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
           relationship: reverse__node__field_associated_location
-          view_mode: full
+          view_mode: linklove
       header: {  }
       footer: {  }
       empty: {  }
