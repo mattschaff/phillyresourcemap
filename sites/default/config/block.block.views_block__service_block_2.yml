@@ -1,4 +1,4 @@
-uuid: 2a81be8a-8810-4d82-8e4c-78688ba422e4
+uuid: a5f7b72c-c29b-4be3-a68a-ab9e9a5aa101
 langcode: en
 status: true
 dependencies:
@@ -9,17 +9,17 @@ dependencies:
     - views
   theme:
     - bootstrap
-id: views_block__service_block_1
+id: views_block__service_block_2
 theme: bootstrap
 region: content
-weight: -5
+weight: -7
 provider: null
-plugin: 'views_block:service-block_1'
+plugin: 'views_block:service-block_2'
 settings:
-  id: 'views_block:service-block_1'
+  id: 'views_block:service-block_2'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
   context_mapping: {  }
