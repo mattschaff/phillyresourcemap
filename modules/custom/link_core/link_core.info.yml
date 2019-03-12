@@ -1,0 +1,5 @@
+name: Link Core
+type: module
+description: 'Provides functionality for the Link Core glue module.'
+package: Custom
+core: 8.x

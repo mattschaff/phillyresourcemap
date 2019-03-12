@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_breadcrumb()
+ */
+function link_core_preprocess_breadcrumb(&$variables) {
+	// override breadcrumb if a query parameter is set
+  $service_tid = \Drupal::request()->query->get('svtid');
+  if (!empty($service_tid)) {
+  	// get taxonomy term url
+  	$term = Term::load($service_tid);
+  	if (is_object($term)) {
+  		$name = $term->getName();
+			$url = $term->toUrl()->toString();
+			// get current title
+			$route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+			$title = $route->getDefault('_title');
+			// set breadcrumb
+			$breadcrumb = [
+				[
+					'text' => $name,
+					'url' => $url,
+				],
+			];
+			$variables['breadcrumb'] = $breadcrumb;
+  	}
+  }
+  // set breadcrumbs to cache based on URL
+  $variables['#cache']['contexts'][] = 'url.path';
+}
