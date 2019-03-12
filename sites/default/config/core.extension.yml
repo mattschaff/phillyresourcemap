@@ -33,6 +33,7 @@ module:
   image: 0
   inline_entity_form: 0
   link: 0
+  link_core: 0
   menu_ui: 0
   node: 0
   options: 0

@@ -394,9 +394,9 @@ display:
           id: nid
           table: node_field_data
           field: nid
-          relationship: none
+          relationship: field_associated_location
           group_type: group
-          admin_label: 'Service ID'
+          admin_label: 'Location ID'
           label: ''
           exclude: true
           alter:
@@ -442,7 +442,7 @@ display:
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: true
+            prefix_suffix: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -462,7 +462,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: 'Service Path'
+          admin_label: 'Location Path'
           label: ''
           exclude: true
           alter:
@@ -517,8 +517,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: '{{ nothing }}'
+            make_link: true
+            path: '{{ nothing }}?svtid={{ raw_arguments.tid }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -556,7 +556,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
