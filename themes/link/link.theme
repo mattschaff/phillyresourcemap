@@ -1,8 +1,30 @@
 <?php
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 /**
  * @file
  * Bootstrap sub-theme.
  *
  * Place your custom PHP code in this file.
  */
+
+ /**
+	* Implements hook_preprocess_views_view
+	*/
+function link_preprocess_views_view(&$vars){
+	// only use unique location NIDs for service view
+	if ($vars['view']->id() === 'service_view') {
+		$rows = $vars['rows'][0]['#rows'];
+		$new_rows = [];
+		$used_location_nids = [];
+		foreach ($rows as $row){
+			$location_nid = $row->node_field_data_node__field_associated_location_nid;
+			if (!in_array($location_nid, $used_location_nids)) {
+				$used_location_nids[] = $location_nid;
+				$new_rows[] = $row;
+			}
+		}
+		$vars['rows'][0]['#rows'] = $new_rows;
+	}
+}
