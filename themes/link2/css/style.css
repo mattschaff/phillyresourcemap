@@ -2397,6 +2397,8 @@ article.service.linklove { width: 100%; background: #fff; padding: 20px; border:
 article.service.linklove h2 { margin-top: 10px; color: #6d839c; }
 article.service.linklove .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
 article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
+article.service.linklove .field--name-field-schedule .field--name-field-day { width: 75px; display: inline-block; }
+article.service.linklove .field--name-field-schedule .field--name-field-time { display: inline-block; }
 
 .view-id-service.view-display-id-block_1 .views-row { padding-top: 30px; }
 
