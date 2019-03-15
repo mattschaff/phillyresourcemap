@@ -27,4 +27,18 @@ function link_preprocess_views_view(&$vars){
 		}
 		$vars['rows'][0]['#rows'] = $new_rows;
 	}
+	// only use unique service TIDs for service view on location page
+	if ($vars['view']->id() === 'service' && $vars['display_id'] === 'block_2') {
+		$rows = $vars['rows'][0]['#rows'];
+		$new_rows = [];
+		$used_service_tids = [];
+		foreach ($rows as $row){
+			$service_tid = $row['#row']->taxonomy_term_field_data_node__field_service_category_tid;
+			if (!in_array($service_tid, $used_service_tids)) {
+				$used_service_tids[] = $service_tid;
+				$new_rows[] = $row;
+			}
+		}
+		$vars['rows'][0]['#rows'] = $new_rows;
+	}
 }
