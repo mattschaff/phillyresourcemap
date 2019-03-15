@@ -2293,6 +2293,10 @@ body.navbar-is-fixed-bottom { padding-bottom: 65px; }
 .navbar .logo { margin-right: -15px; padding-left: 15px; padding-right: 15px; }
 @media screen and (min-width: 768px) { .navbar .logo { margin-right: 0; padding-left: 0; } }
 
+.navbar-default .navbar-nav > .active > a { color: white; background-color: #6888ad; }
+
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { background-color: #1C63B4; color: white; }
+
 /** Node styling. */
 .is-unpublished { background-color: #fff4f4; }
 
