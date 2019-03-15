@@ -5,6 +5,7 @@
 
 .field--label {
   font-weight: bold;
+  font-size: 18px;
 }
 .field--label-inline .field--label,
 .field--label-inline .field--items {
@@ -23,4 +24,8 @@
 }
 .field--label-inline .field--label::after {
   content: ':';
+}
+
+.field {
+  font-size: 16px;
 }

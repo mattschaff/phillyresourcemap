@@ -1,0 +1,36 @@
+.breadcrumb {
+  padding-right: 0px;
+  padding-left: 0px;
+  li {
+    color: #6d839c;
+    font-weight: bold;
+    &.active {
+      color: #6d839c;
+    }
+  }
+  li:first-child {
+    a {
+      color: white;
+      font-weight: normal;
+      background: #1C63B4;
+      padding: 5px;
+      border-radius: 4px;
+      position: relative;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 25px solid #1C63B4;
+        border-right: 12px solid transparent;
+        position: absolute;
+        top: 0px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.breadcrumb > li + li:before {
+  opacity: 0;
+}

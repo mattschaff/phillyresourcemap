@@ -1,0 +1,31 @@
+#block-link2-views-block-service-block-2 {
+    width: 100%;
+    background: #fff;
+    padding: 10px 20px;
+    border: 2px solid #e7e7e7;
+    border-bottom: none;
+    box-sizing: border-box;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    h2 {
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 8px;
+        color: #999999;
+        font-size: 18px;
+    }
+    .form-group {
+        float: right;
+        .views-row {
+            display: inline-block;
+            margin-top: 25px;
+            margin-right:20px;
+            font-size: 16px;
+            .views-field-field-service-category {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

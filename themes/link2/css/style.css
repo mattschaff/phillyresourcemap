@@ -2211,7 +2211,7 @@ html.js .form-item .input-group-addon .input-group-addon { background-color: whi
 html.js .ajax-new-content:empty { display: none !important; }
 
 /** $file Visual styles for fields. */
-.field--label { font-weight: bold; }
+.field--label { font-weight: bold; font-size: 18px; }
 
 .field--label-inline .field--label, .field--label-inline .field--items { float: left; /*LTR*/ }
 
@@ -2220,6 +2220,8 @@ html.js .ajax-new-content:empty { display: none !important; }
 [dir="rtl"] .field--label-inline .field--label, [dir="rtl"] .field--label-inline .field--items { padding-left: 0.5em; padding-right: 0; float: right; /*RTL*/ }
 
 .field--label-inline .field--label::after { content: ':'; }
+
+.field { font-size: 16px; }
 
 /** File (and Image Widget) styles. */
 .file { display: table; font-size: 75%; font-weight: 700; margin: 5px 0; width: 100%; }
@@ -2283,6 +2285,7 @@ body.navbar-is-fixed-bottom { padding-bottom: 65px; }
   body.toolbar-vertical.navbar-is-fixed-top header, body.toolbar-vertical.navbar-is-fixed-bottom header { z-index: 500; }
   body.toolbar-vertical.navbar-is-fixed-top header { top: 39px; } }
 
+.navbar.container { background: white; }
 @media screen and (min-width: 768px) { .navbar.container { max-width: 720px; } }
 @media screen and (min-width: 992px) { .navbar.container { max-width: 940px; } }
 @media screen and (min-width: 1200px) { .navbar.container { max-width: 1140px; } }
@@ -2369,6 +2372,45 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 
 body.toolbar-loading { margin-top: 0; }
 body.toolbar-loading.toolbar { margin-bottom: 15px; }
+
+/** Architecture module styling. */
+.main-container { max-width: 768px; }
+
+.navbar.container { max-width: 800px; }
+
+html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
+
+#block-link2-views-block-service-block-2 { width: 100%; background: #fff; padding: 10px 20px; border: 2px solid #e7e7e7; border-bottom: none; box-sizing: border-box; border-top-right-radius: 4px; border-top-left-radius: 4px; }
+#block-link2-views-block-service-block-2 h2 { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
+#block-link2-views-block-service-block-2 .form-group { float: right; }
+#block-link2-views-block-service-block-2 .form-group .views-row { display: inline-block; margin-top: 25px; margin-right: 20px; font-size: 16px; }
+#block-link2-views-block-service-block-2 .form-group .views-row .views-field-field-service-category a { font-weight: bold; }
+
+.view-id-service_view { background: #fff; padding: 20px; border: 1px solid #ccc; box-sizing: border-box; }
+
+article.location .field--name-field-location-address { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
+article.location .field--name-field-location-address .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
+article.location .field--name-field-location-address .field--item { text-align: right; float: right; }
+article.location .field--name-field-location-geolocation { border-right: 2px solid #e7e7e7; border-left: 2px solid #e7e7e7; }
+
+article.service.linklove { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; }
+article.service.linklove h2 { margin-top: 10px; color: #6d839c; }
+article.service.linklove .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
+article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
+
+.view-id-service.view-display-id-block_1 .views-row { padding-top: 30px; }
+
+.breadcrumb { padding-right: 0px; padding-left: 0px; }
+.breadcrumb li { color: #6d839c; font-weight: bold; }
+.breadcrumb li.active { color: #6d839c; }
+.breadcrumb li:first-child a { color: white; font-weight: normal; background: #1C63B4; padding: 5px; border-radius: 4px; position: relative; border-bottom-right-radius: 0px; border-top-right-radius: 0px; }
+.breadcrumb li:first-child a:after { content: ''; width: 0; height: 0; border-top: 25px solid #1C63B4; border-right: 12px solid transparent; position: absolute; top: 0px; margin-left: 5px; }
+
+.breadcrumb > li + li:before { opacity: 0; }
+
+a { color: #1c63a0; }
+
+.btn-primary { background-color: #1c63a0; }
 
 /** jQuery UI autocomplete widget style overrides.  $todo Remove once jQuery UI is no longer used? */
 .ui-autocomplete { background: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); color: inherit; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; list-style: none; min-width: 160px; padding: 5px 0; text-align: left; z-index: 1000; }

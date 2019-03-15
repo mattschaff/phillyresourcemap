@@ -14,6 +14,14 @@
 @import "component/table-drag";
 @import "component/tabs";
 @import "component/toolbar";
+@import "component/architecture";
+@import "component/services_on_location";
+@import "component/service_view";
+@import "component/location";
+@import "component/breadcrumb";
+
+@import "component/basic";
+
 
 // jQuery UI style overrides.
 @import "jquery-ui/autocomplete";
