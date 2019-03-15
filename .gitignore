@@ -62,3 +62,4 @@ Thumbs.db
 !core/**/*.gz
 
 vendor/*
+.vscode*
