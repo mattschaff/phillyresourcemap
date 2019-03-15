@@ -1,0 +1,22 @@
+uuid: 81094f46-8544-4914-813f-527320035631
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - link2
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: link2_messages
+theme: link2
+region: header
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

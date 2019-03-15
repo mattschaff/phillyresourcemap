@@ -1,0 +1,25 @@
+uuid: e4be1da4-b997-43d3-9c3e-f503d27015af
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - link2
+_core:
+  default_config_hash: Cy3vkpYrD1O5JG-BeEnokF0bByHYDEa8CBfWivB4_SQ
+id: link2_branding
+theme: link2
+region: navigation
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

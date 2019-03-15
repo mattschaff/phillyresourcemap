@@ -1,0 +1,22 @@
+uuid: c1a7cf2f-f066-405a-9fa7-2ee19c79f974
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - link2
+_core:
+  default_config_hash: F3d5hyAFunLh4PhGviJF019fHn1Z3_zy5gzsQ0tX1K0
+id: link2_search
+theme: link2
+region: sidebar_second
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

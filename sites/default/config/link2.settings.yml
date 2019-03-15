@@ -1,12 +1,11 @@
-schemas:
-  bootstrap: 8000
-  link: 8000
+cdn_provider: ''
+_core:
+  default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: 'http://link-love.lndo.site/themes/link/favicon.ico'
+  url: 'http://link-love.lndo.site/themes/bootstrap/favicon.ico'
   use_default: true
-cdn_provider: jsdelivr
 features:
   comment_user_picture: true
   comment_user_verification: true
@@ -16,4 +15,6 @@ logo:
   path: ''
   url: ''
   use_default: true
-table: ''
+schemas:
+  bootstrap: 8000
+  link2: 8000
