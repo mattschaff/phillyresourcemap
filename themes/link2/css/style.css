@@ -2387,7 +2387,7 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 #block-link2-views-block-service-block-2 { width: 100%; background: #fff; padding: 10px 20px; border: 2px solid #e7e7e7; border-bottom: none; box-sizing: border-box; border-top-right-radius: 4px; border-top-left-radius: 4px; }
 #block-link2-views-block-service-block-2 h2 { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
 #block-link2-views-block-service-block-2 .form-group { float: right; }
-#block-link2-views-block-service-block-2 .form-group .views-row { display: inline-block; margin-top: 25px; margin-right: 20px; font-size: 16px; }
+#block-link2-views-block-service-block-2 .form-group .views-row { position: relative; display: inline-block; margin-top: 25px; margin-right: 20px; font-size: 16px; }
 #block-link2-views-block-service-block-2 .form-group .views-row .views-field-field-service-category a { font-weight: bold; }
 
 .view-id-service_view { background: #fff; padding: 20px; border: 1px solid #ccc; box-sizing: border-box; }
@@ -2403,6 +2403,8 @@ article.service.linklove .field--label { display: inline-block; font-weight: 700
 article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
 article.service.linklove .field--name-field-schedule .field--name-field-day { width: 90px; display: inline-block; }
 article.service.linklove .field--name-field-schedule .field--name-field-time { display: inline-block; }
+article.service.linklove .field--name-field-available { position: absolute; top: 0px; right: 30px; padding: 5px 8px; background: #c3c3c3; color: white; text-transform: uppercase; font-weight: bold; font-size: 12px; letter-spacing: 2px; }
+article.service.linklove .field--name-field-available.available { background: #9ad69a; }
 
 .view-id-service.view-display-id-block_1 .views-row { padding-top: 30px; }
 

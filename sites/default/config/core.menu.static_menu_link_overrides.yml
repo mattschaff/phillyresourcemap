@@ -23,5 +23,11 @@ definitions:
     parent: ''
     weight: 10
     expanded: false
+  comment__admin:
+    weight: -60
+    menu_name: admin
+    parent: system.admin_content
+    expanded: false
+    enabled: true
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

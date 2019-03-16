@@ -64,6 +64,21 @@ article.service.linklove {
       display: inline-block;
     }
   }
+  .field--name-field-available {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    padding: 5px 8px;
+    background: #c3c3c3;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    &.available {
+      background: #9ad69a;
+    }
+  }
 }
 
 .view-id-service.view-display-id-block_1 {

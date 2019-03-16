@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.service.field_age_elibility
     - field.field.node.service.field_application_process
     - field.field.node.service.field_associated_location
+    - field.field.node.service.field_available
     - field.field.node.service.field_schedule
     - field.field.node.service.field_service_category
     - field.field.node.service.field_service_description
@@ -22,7 +23,7 @@ bundle: service
 mode: linklove
 content:
   field_age_elibility:
-    weight: 4
+    weight: 5
     label: above
     settings:
       link: false
@@ -30,15 +31,25 @@ content:
     type: entity_reference_label
     region: content
   field_application_process:
-    weight: 5
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_available:
+    type: boolean
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
   field_schedule:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 7
     label: above
     settings:
       view_mode: default
@@ -46,7 +57,7 @@ content:
     third_party_settings: {  }
     region: content
   field_service_category:
-    weight: 2
+    weight: 3
     label: above
     settings:
       link: true
@@ -54,14 +65,14 @@ content:
     type: entity_reference_label
     region: content
   field_service_description:
-    weight: 1
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_service_gender:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: false
@@ -69,7 +80,7 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

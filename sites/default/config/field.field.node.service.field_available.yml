@@ -1,0 +1,23 @@
+uuid: 6601927f-da4e-4597-9de5-cc6a08fb3f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_available
+    - node.type.service
+id: node.service.field_available
+field_name: field_available
+entity_type: node
+bundle: service
+label: Available
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Available
+  off_label: 'Not Available'
+field_type: boolean
