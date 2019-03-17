@@ -11,10 +11,31 @@ dependencies:
     - node.type.location
   module:
     - address
+    - field_group
     - geolocation
     - telephone
     - text
     - user
+third_party_settings:
+  field_group:
+    group_contact_metadata:
+      children:
+        - field_location_address
+        - field_phone_number
+        - field_email
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: contact-metadata
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: ''
 id: node.location.default
 targetEntityType: node
 bundle: location

@@ -1,0 +1,60 @@
+article.service.linklove {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  position: relative;
+  h2 {
+    margin-top: 10px;
+    color: #6d839c;
+  }
+  .field--label {
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 8px;
+    color: #999999;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .field--name-field-age-elibility,
+  .field--name-field-service-gender {
+    .field--items {
+      .field--item {
+        display: inline;
+        margin-right:10px;
+      }
+    }
+  }
+  .field--name-field-schedule {
+    .field--name-field-day {
+      width: 90px;
+      display: inline-block;
+    }
+    .field--name-field-time {
+      display: inline-block;
+    }
+  }
+  .field--name-field-available {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    padding: 5px 8px;
+    background: #c3c3c3;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    &.available {
+      background: #9ad69a;
+    }
+  }
+  .service-specific-details {
+    clear: both;
+  }
+  .general-service-details {
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+}

@@ -38,20 +38,42 @@ third_party_settings:
         - field_tech_resources
         - field_classes
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: fieldset
       format_settings:
         id: ''
         classes: service-specific-details
         description: ''
       label: 'Service-Specific Details'
+    group_general_service_details:
+      children:
+        - links
+        - field_service_description
+        - field_service_category
+        - field_service_gender
+        - field_age_elibility
+        - field_application_process
+        - field_schedule
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: general-service-details
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: ''
 id: node.service.linklove
 targetEntityType: node
 bundle: service
 mode: linklove
 content:
   field_age_elibility:
-    weight: 5
+    weight: 6
     label: above
     settings:
       link: false
@@ -59,7 +81,7 @@ content:
     type: entity_reference_label
     region: content
   field_application_process:
-    weight: 6
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -128,7 +150,7 @@ content:
     third_party_settings: {  }
   field_schedule:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    weight: 8
     label: above
     settings:
       view_mode: default
@@ -136,7 +158,7 @@ content:
     third_party_settings: {  }
     region: content
   field_service_category:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: true
@@ -144,14 +166,14 @@ content:
     type: entity_reference_label
     region: content
   field_service_description:
-    weight: 2
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_service_gender:
-    weight: 4
+    weight: 5
     label: above
     settings:
       link: false
@@ -166,7 +188,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

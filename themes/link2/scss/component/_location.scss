@@ -1,5 +1,5 @@
 article.location {
-  .field--name-field-location-address {
+  .contact-metadata {
     width: 100%;
     background: #fff;
     padding: 20px;
@@ -9,80 +9,70 @@ article.location {
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     overflow: hidden;
-    .field--label {
-      display: inline-block;
-      font-weight: 700;
-      margin-right: 8px;
-      color: #999999;
-      font-size: 18px;
+    .field {
+      clear: both;
+      padding: 20px 20px;
+      overflow: hidden;
+      border-bottom: 1px solid #eeeeee;
+      &:first-child {
+        padding-top: 0px;
+      }
+      &:last-child {
+        border: none;
+      }
+      .field--label {
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 8px;
+        color: #999999;
+        font-size: 18px;
+      }
+      .field--item {
+        text-align: right;
+        float: right;
+      }
     }
-    .field--item {
-      text-align: right;
-      float: right;
-    }
+
   }
   .field--name-field-location-geolocation {
     border-right: 2px solid #e7e7e7;
     border-left: 2px solid #e7e7e7;
-
-  }
-}
-
-article.service.linklove {
-  width: 100%;
-  background: #fff;
-  padding: 20px;
-  border: 2px solid #e7e7e7;
-  border-radius: 4px;
-  h2 {
-    margin-top: 10px;
-    color: #6d839c;
-  }
-  .field--label {
-    display: inline-block;
-    font-weight: 700;
-    margin-right: 8px;
-    color: #999999;
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  .field--name-field-age-elibility,
-  .field--name-field-service-gender {
-    .field--items {
-      .field--item {
-        display: inline;
-        margin-right:10px;
-      }
-    }
-  }
-  .field--name-field-schedule {
-    .field--name-field-day {
-      width: 90px;
-      display: inline-block;
-    }
-    .field--name-field-time {
-      display: inline-block;
-    }
-  }
-  .field--name-field-available {
-    position: absolute;
-    top: 0px;
-    right: 30px;
-    padding: 5px 8px;
-    background: #c3c3c3;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 12px;
-    letter-spacing: 2px;
-    &.available {
-      background: #9ad69a;
-    }
   }
 }
 
 .view-id-service.view-display-id-block_1 {
   .views-row {
     padding-top: 30px;
+    &:first-child {
+      padding-top: 0px;
+    }
+  }
+  .view-header {
+    //border-top: 1px solid #eeeeee;
+    padding: 20px 0px;
+    margin-top: 20px;
+    h3 {
+      overflow: hidden;
+      text-align: center;
+      color: #999999;
+     }
+     h3:before,
+     h3:after {
+      background-color:#eeeeee;
+      content: "";
+      display: inline-block;
+      height: 2px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+     }
+     h3:before {
+      right: 0.5em;
+      margin-left: -50%;
+     }
+     h3:after {
+      left: 0.5em;
+      margin-right: -50%;
+     }
   }
 }

@@ -2392,12 +2392,7 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 
 .view-id-service_view { background: #fff; padding: 20px; border: 1px solid #ccc; box-sizing: border-box; }
 
-article.location .field--name-field-location-address { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
-article.location .field--name-field-location-address .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
-article.location .field--name-field-location-address .field--item { text-align: right; float: right; }
-article.location .field--name-field-location-geolocation { border-right: 2px solid #e7e7e7; border-left: 2px solid #e7e7e7; }
-
-article.service.linklove { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; }
+article.service.linklove { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
 article.service.linklove h2 { margin-top: 10px; color: #6d839c; }
 article.service.linklove .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
 article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
@@ -2405,8 +2400,24 @@ article.service.linklove .field--name-field-schedule .field--name-field-day { wi
 article.service.linklove .field--name-field-schedule .field--name-field-time { display: inline-block; }
 article.service.linklove .field--name-field-available { position: absolute; top: 0px; right: 30px; padding: 5px 8px; background: #c3c3c3; color: white; text-transform: uppercase; font-weight: bold; font-size: 12px; letter-spacing: 2px; }
 article.service.linklove .field--name-field-available.available { background: #9ad69a; }
+article.service.linklove .service-specific-details { clear: both; }
+article.service.linklove .general-service-details { margin-bottom: 20px; overflow: hidden; }
+
+article.location .contact-metadata { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
+article.location .contact-metadata .field { clear: both; padding: 20px 20px; overflow: hidden; border-bottom: 1px solid #eeeeee; }
+article.location .contact-metadata .field:first-child { padding-top: 0px; }
+article.location .contact-metadata .field:last-child { border: none; }
+article.location .contact-metadata .field .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
+article.location .contact-metadata .field .field--item { text-align: right; float: right; }
+article.location .field--name-field-location-geolocation { border-right: 2px solid #e7e7e7; border-left: 2px solid #e7e7e7; }
 
 .view-id-service.view-display-id-block_1 .views-row { padding-top: 30px; }
+.view-id-service.view-display-id-block_1 .views-row:first-child { padding-top: 0px; }
+.view-id-service.view-display-id-block_1 .view-header { padding: 20px 0px; margin-top: 20px; }
+.view-id-service.view-display-id-block_1 .view-header h3 { overflow: hidden; text-align: center; color: #999999; }
+.view-id-service.view-display-id-block_1 .view-header h3:before, .view-id-service.view-display-id-block_1 .view-header h3:after { background-color: #eeeeee; content: ""; display: inline-block; height: 2px; position: relative; vertical-align: middle; width: 50%; }
+.view-id-service.view-display-id-block_1 .view-header h3:before { right: 0.5em; margin-left: -50%; }
+.view-id-service.view-display-id-block_1 .view-header h3:after { left: 0.5em; margin-right: -50%; }
 
 .breadcrumb { padding-right: 0px; padding-left: 0px; }
 .breadcrumb li { color: #6d839c; font-weight: bold; }
