@@ -1,0 +1,21 @@
+uuid: 2a834049-2598-4e85-9a37-f2cc75380523
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_housing_type
+    - node.type.service
+  module:
+    - options
+id: node.service.field_housing_type
+field_name: field_housing_type
+entity_type: node
+bundle: service
+label: 'Housing Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

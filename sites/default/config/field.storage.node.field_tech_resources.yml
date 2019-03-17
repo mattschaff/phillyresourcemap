@@ -1,0 +1,33 @@
+uuid: 614b529b-c5a8-4506-b4f5-cfd1b1e65a57
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_tech_resources
+field_name: field_tech_resources
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Computing
+    -
+      value: '1'
+      label: 'Wifi Hotspot'
+    -
+      value: '2'
+      label: Giveaways
+    -
+      value: '3'
+      label: Phone
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

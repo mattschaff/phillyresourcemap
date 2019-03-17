@@ -1,0 +1,21 @@
+uuid: 15a30d96-6979-40b1-94d7-37ce1accf02f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_medical_resource_type
+    - node.type.service
+  module:
+    - options
+id: node.service.field_medical_resource_type
+field_name: field_medical_resource_type
+entity_type: node
+bundle: service
+label: 'Medical Resource Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

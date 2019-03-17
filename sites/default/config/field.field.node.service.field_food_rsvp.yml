@@ -1,0 +1,23 @@
+uuid: c95accbd-70f0-403b-9905-55afa7ebd43b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_food_rsvp
+    - node.type.service
+id: node.service.field_food_rsvp
+field_name: field_food_rsvp
+entity_type: node
+bundle: service
+label: 'Can Request in Advance'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Can Request in Advance'
+  off_label: 'Cannot Request in Advance'
+field_type: boolean

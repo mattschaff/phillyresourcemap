@@ -1,0 +1,31 @@
+uuid: b5eb82da-524f-44cb-a530-2122d65b2028
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class.field_class_deat
+    - field.field.paragraph.class.field_class_name
+    - paragraphs.paragraphs_type.class
+  module:
+    - text
+id: paragraph.class.default
+targetEntityType: paragraph
+bundle: class
+mode: default
+content:
+  field_class_deat:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_class_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

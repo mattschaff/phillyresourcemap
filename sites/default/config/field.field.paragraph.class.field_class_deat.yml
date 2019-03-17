@@ -1,0 +1,21 @@
+uuid: 59db0808-0c6e-43c3-bc12-f743ea1624c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_class_deat
+    - paragraphs.paragraphs_type.class
+  module:
+    - text
+id: paragraph.class.field_class_deat
+field_name: field_class_deat
+entity_type: paragraph
+bundle: class
+label: 'Class Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

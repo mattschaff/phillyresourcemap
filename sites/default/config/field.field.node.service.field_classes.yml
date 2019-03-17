@@ -1,0 +1,37 @@
+uuid: ba099307-8dba-4b84-a891-daa46fa83a6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_classes
+    - node.type.service
+    - paragraphs.paragraphs_type.class
+  module:
+    - entity_reference_revisions
+id: node.service.field_classes
+field_name: field_classes
+entity_type: node
+bundle: service
+label: Classes
+description: 'Are there classes citizens can take related to this service?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      class: class
+    target_bundles_drag_drop:
+      class:
+        enabled: true
+        weight: 4
+      location:
+        weight: 5
+        enabled: false
+      schedule_day:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

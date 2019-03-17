@@ -1,0 +1,33 @@
+uuid: aa49c214-0a7b-4cc8-a12c-f6638f1e8e18
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_housing_type
+field_name: field_housing_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Apartment
+    -
+      value: '1'
+      label: Home
+    -
+      value: '2'
+      label: Room
+    -
+      value: '3'
+      label: Basement
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

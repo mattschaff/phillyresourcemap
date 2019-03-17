@@ -1,0 +1,30 @@
+uuid: 8fe5ef3e-da09-4ba2-9e4e-18fd55f80a2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_medical_resource_type
+field_name: field_medical_resource_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Services
+    -
+      value: '1'
+      label: Pharmaceuticals
+    -
+      value: '2'
+      label: 'Alternative Medicine'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

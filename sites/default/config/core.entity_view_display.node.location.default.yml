@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.location.field_email
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_description
     - field.field.node.location.field_location_geolocation
+    - field.field.node.location.field_phone_number
     - node.type.location
   module:
     - address
     - geolocation
+    - telephone
     - text
     - user
 id: node.location.default
@@ -17,6 +20,13 @@ targetEntityType: node
 bundle: location
 mode: default
 content:
+  field_email:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
   field_location_address:
     weight: 3
     label: above
@@ -35,34 +45,42 @@ content:
     weight: 2
     label: hidden
     settings:
-      set_marker: '1'
       title: ''
+      set_marker: '1'
+      common_map: ''
       info_text: ''
+      use_overridden_map_settings: 0
       google_map_settings:
-        height: 400px
-        width: 100%
         type: ROADMAP
-        zoom: '14'
-        maxZoom: 18
+        zoom: '10'
         minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
+        fullscreenControl: 0
         scrollwheel: 1
-        gestureHandling: auto
+        disableDoubleClickZoom: 0
         draggable: 1
-        style: ''
+        height: 400px
+        width: 100%
         info_auto_display: 1
         marker_icon_path: ''
         disableAutoPan: 1
-        rotateControl: 0
-        fullscreenControl: 0
+        style: ''
         preferScrollingToZooming: 0
-        disableDoubleClickZoom: 0
-      use_overridden_map_settings: 0
-      common_map: ''
+        gestureHandling: auto
     third_party_settings: {  }
     type: geolocation_map
+    region: content
+  field_phone_number:
+    weight: 4
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
     region: content
   links:
     weight: 0

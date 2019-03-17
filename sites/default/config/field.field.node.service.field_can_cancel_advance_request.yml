@@ -1,0 +1,23 @@
+uuid: f34bedfc-a84e-4839-9726-97a5e220d6c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_can_cancel_advance_request
+    - node.type.service
+id: node.service.field_can_cancel_advance_request
+field_name: field_can_cancel_advance_request
+entity_type: node
+bundle: service
+label: 'Can Cancel Advance Request'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Can Cancel Advance Request'
+  off_label: 'Cannot Cancel Advance Request'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 289f9e0e-d9c7-46b5-8563-aa1e8f275779
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tech_resources
+    - node.type.service
+  module:
+    - options
+id: node.service.field_tech_resources
+field_name: field_tech_resources
+entity_type: node
+bundle: service
+label: 'Tech Resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

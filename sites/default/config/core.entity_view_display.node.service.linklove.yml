@@ -8,15 +8,43 @@ dependencies:
     - field.field.node.service.field_application_process
     - field.field.node.service.field_associated_location
     - field.field.node.service.field_available
+    - field.field.node.service.field_can_cancel_advance_request
+    - field.field.node.service.field_classes
+    - field.field.node.service.field_food_rsvp
+    - field.field.node.service.field_housing_type
+    - field.field.node.service.field_medical_resource_type
+    - field.field.node.service.field_oral_products
     - field.field.node.service.field_schedule
     - field.field.node.service.field_service_category
     - field.field.node.service.field_service_description
     - field.field.node.service.field_service_gender
+    - field.field.node.service.field_tech_resources
     - node.type.service
   module:
     - entity_reference_revisions
+    - field_group
+    - options
     - text
     - user
+third_party_settings:
+  field_group:
+    group_service_specific_details:
+      children:
+        - field_food_rsvp
+        - field_can_cancel_advance_request
+        - field_housing_type
+        - field_oral_products
+        - field_medical_resource_type
+        - field_tech_resources
+        - field_classes
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: service-specific-details
+        description: ''
+      label: 'Service-Specific Details'
 id: node.service.linklove
 targetEntityType: node
 bundle: service
@@ -46,6 +74,57 @@ content:
       format: default
       format_custom_true: ''
       format_custom_false: ''
+    third_party_settings: {  }
+  field_can_cancel_advance_request:
+    type: boolean
+    weight: 13
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_classes:
+    type: entity_reference_revisions_entity_view
+    weight: 18
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_food_rsvp:
+    type: boolean
+    weight: 12
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_housing_type:
+    type: list_default
+    weight: 14
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_medical_resource_type:
+    type: list_default
+    weight: 16
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_oral_products:
+    type: string
+    weight: 15
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
   field_schedule:
     type: entity_reference_revisions_entity_view
@@ -79,6 +158,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_tech_resources:
+    type: list_default
+    weight: 17
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 1
     region: content

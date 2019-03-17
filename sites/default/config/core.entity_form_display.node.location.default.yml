@@ -3,14 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.location.field_email
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_description
     - field.field.node.location.field_location_geolocation
+    - field.field.node.location.field_phone_number
     - node.type.location
   module:
     - address
     - geolocation
     - path
+    - telephone
     - text
 id: node.location.default
 targetEntityType: node
@@ -23,6 +26,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_email:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
   field_location_address:
     weight: 123
     settings:
@@ -72,6 +83,13 @@ content:
       allow_override_map_settings: 0
     third_party_settings: {  }
     type: geolocation_googlegeocoder
+    region: content
+  field_phone_number:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
     region: content
   path:
     type: path

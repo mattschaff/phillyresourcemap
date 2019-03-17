@@ -1,0 +1,19 @@
+uuid: d5b44336-d92f-4b91-b12f-1d680990ad3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oral_products
+    - node.type.service
+id: node.service.field_oral_products
+field_name: field_oral_products
+entity_type: node
+bundle: service
+label: 'Oral Products'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
