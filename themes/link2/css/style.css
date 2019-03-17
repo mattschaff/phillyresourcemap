@@ -2392,16 +2392,16 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 
 .view-id-service_view { background: #fff; padding: 20px; border: 1px solid #ccc; box-sizing: border-box; }
 
-article.service.linklove { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
-article.service.linklove h2 { margin-top: 10px; color: #6d839c; }
-article.service.linklove .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
-article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
-article.service.linklove .field--name-field-schedule .field--name-field-day { width: 90px; display: inline-block; }
-article.service.linklove .field--name-field-schedule .field--name-field-time { display: inline-block; }
-article.service.linklove .field--name-field-available { position: absolute; top: 0px; right: 30px; padding: 5px 8px; background: #c3c3c3; color: white; text-transform: uppercase; font-weight: bold; font-size: 12px; letter-spacing: 2px; }
-article.service.linklove .field--name-field-available.available { background: #9ad69a; }
-article.service.linklove .service-specific-details { clear: both; }
-article.service.linklove .general-service-details { margin-bottom: 20px; overflow: hidden; }
+article.service.linklove, article.service { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
+article.service.linklove h2, article.service h2 { margin-top: 10px; color: #6d839c; }
+article.service.linklove .field--label, article.service .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
+article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item, article.service .field--name-field-age-elibility .field--items .field--item, article.service .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
+article.service.linklove .field--name-field-schedule .field--name-field-day, article.service .field--name-field-schedule .field--name-field-day { width: 90px; display: inline-block; }
+article.service.linklove .field--name-field-schedule .field--name-field-time, article.service .field--name-field-schedule .field--name-field-time { display: inline-block; }
+article.service.linklove .field--name-field-available, article.service .field--name-field-available { position: absolute; top: 0px; right: 30px; padding: 5px 8px; background: #c3c3c3; color: white; text-transform: uppercase; font-weight: bold; font-size: 12px; letter-spacing: 2px; }
+article.service.linklove .field--name-field-available.available, article.service .field--name-field-available.available { background: #9ad69a; }
+article.service.linklove .service-specific-details, article.service .service-specific-details { clear: both; }
+article.service.linklove .general-service-details, article.service .general-service-details { margin-bottom: 20px; overflow: hidden; }
 
 article.location .contact-metadata { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
 article.location .contact-metadata .field { clear: both; padding: 20px 20px; overflow: hidden; border-bottom: 1px solid #eeeeee; }

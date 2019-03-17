@@ -51,6 +51,11 @@
             "drush/contrib/{$name}": ["type:drupal-drush"],
             "modules/custom/{$name}": ["type:drupal-custom-module"],
             "themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "patches": {
+            "drupal/contextual": {
+                "Contextual links destination uses internal paths, not path aliases": "https://www.drupal.org/files/issues/2639822-8.patch"     
+            }
         }
     },
     "autoload": {
