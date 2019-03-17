@@ -2,6 +2,7 @@ framework:
   css:
     theme:
       css/style.css: {}
+      'https://use.fontawesome.com/releases/v5.7.2/css/all.css': { type: external }
   js:
     bootstrap/assets/javascripts/bootstrap/affix.js: {}
     bootstrap/assets/javascripts/bootstrap/alert.js: {}

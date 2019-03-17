@@ -78,3 +78,16 @@ body {
   background-color: #1C63B4;
   color: white;
 }
+
+.menu--main {
+  li {
+    i.fas {
+      margin-right: 5px;
+    }
+    @media #{$tablet} {
+      span.text {
+        display: none;
+      }
+    }
+  }
+}

@@ -31,6 +31,25 @@ article.location {
         text-align: right;
         float: right;
       }
+      &.field--name-field-phone-number,
+      &.field--name-field-location-address,
+      &.field--name-field-email {
+        .field--label:before {
+          font-family: "Font Awesome 5 Free";
+          font-weight: bold;
+          margin-right: 10px;
+          content: "";
+        }
+      }
+      &.field--name-field-phone-number .field--label:before{
+        content: "\f095";
+      }
+      &.field--name-field-location-address .field--label:before{
+        content: "\f5a0";
+      }
+      &.field--name-field-email .field--label:before{
+        content: "\f0e0";
+      }
     }
 
   }

@@ -9,6 +9,10 @@ article.service {
   h2 {
     margin-top: 10px;
     color: #6d839c;
+    padding: 0px 15px;
+    i.fas {
+      color: #1c63a0;
+    }
   }
   .field--label {
     display: inline-block;
@@ -53,6 +57,38 @@ article.service {
   }
   .service-specific-details {
     clear: both;
+    border: none;
+    box-shadow: none;
+    .panel-heading {
+      border: none;
+      background: none;
+      .panel-title {
+        overflow: hidden;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        color: #999999;
+        &:before,
+        &:after {
+          background-color:#eeeeee;
+          content: "";
+          display: inline-block;
+          height: 2px;
+          position: relative;
+          vertical-align: middle;
+          width: 50%;
+        }
+        &:before {
+          right: 0.5em;
+          margin-left: -50%;
+        }
+        &:after {
+          left: 0.5em;
+          margin-right: -50%;
+        }
+       }
+
+    }
   }
   .general-service-details {
     margin-bottom: 20px;

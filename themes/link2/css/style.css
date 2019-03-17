@@ -2297,12 +2297,17 @@ body.navbar-is-fixed-bottom { padding-bottom: 65px; }
 
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { background-color: #1C63B4; color: white; }
 
+.menu--main li i.fas { margin-right: 5px; }
+@media screen and (min-width: 768px) { .menu--main li span.text { display: none; } }
+
 /** Node styling. */
 .is-unpublished { background-color: #fff4f4; }
 
 .node-preview-container { margin-top: -15px; }
 
 .node-preview-form-select { padding: 15px; }
+
+.path-taxonomy .page-header i.fas { color: #1c63a0; }
 
 /** Panel styling. */
 .panel-title { display: block; margin: -10px -15px; padding: 10px 15px; }
@@ -2392,15 +2397,23 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 
 .view-id-service_view { background: #fff; padding: 20px; border: 1px solid #ccc; box-sizing: border-box; }
 
+.view-service-list .view-header { color: #999999; font-size: 18px; }
+
 article.service.linklove, article.service { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
-article.service.linklove h2, article.service h2 { margin-top: 10px; color: #6d839c; }
+article.service.linklove h2, article.service h2 { margin-top: 10px; color: #6d839c; padding: 0px 15px; }
+article.service.linklove h2 i.fas, article.service h2 i.fas { color: #1c63a0; }
 article.service.linklove .field--label, article.service .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
 article.service.linklove .field--name-field-age-elibility .field--items .field--item, article.service.linklove .field--name-field-service-gender .field--items .field--item, article.service .field--name-field-age-elibility .field--items .field--item, article.service .field--name-field-service-gender .field--items .field--item { display: inline; margin-right: 10px; }
 article.service.linklove .field--name-field-schedule .field--name-field-day, article.service .field--name-field-schedule .field--name-field-day { width: 90px; display: inline-block; }
 article.service.linklove .field--name-field-schedule .field--name-field-time, article.service .field--name-field-schedule .field--name-field-time { display: inline-block; }
 article.service.linklove .field--name-field-available, article.service .field--name-field-available { position: absolute; top: 0px; right: 30px; padding: 5px 8px; background: #c3c3c3; color: white; text-transform: uppercase; font-weight: bold; font-size: 12px; letter-spacing: 2px; }
 article.service.linklove .field--name-field-available.available, article.service .field--name-field-available.available { background: #9ad69a; }
-article.service.linklove .service-specific-details, article.service .service-specific-details { clear: both; }
+article.service.linklove .service-specific-details, article.service .service-specific-details { clear: both; border: none; box-shadow: none; }
+article.service.linklove .service-specific-details .panel-heading, article.service .service-specific-details .panel-heading { border: none; background: none; }
+article.service.linklove .service-specific-details .panel-heading .panel-title, article.service .service-specific-details .panel-heading .panel-title { overflow: hidden; text-align: center; font-weight: bold; font-size: 18px; color: #999999; }
+article.service.linklove .service-specific-details .panel-heading .panel-title:before, article.service.linklove .service-specific-details .panel-heading .panel-title:after, article.service .service-specific-details .panel-heading .panel-title:before, article.service .service-specific-details .panel-heading .panel-title:after { background-color: #eeeeee; content: ""; display: inline-block; height: 2px; position: relative; vertical-align: middle; width: 50%; }
+article.service.linklove .service-specific-details .panel-heading .panel-title:before, article.service .service-specific-details .panel-heading .panel-title:before { right: 0.5em; margin-left: -50%; }
+article.service.linklove .service-specific-details .panel-heading .panel-title:after, article.service .service-specific-details .panel-heading .panel-title:after { left: 0.5em; margin-right: -50%; }
 article.service.linklove .general-service-details, article.service .general-service-details { margin-bottom: 20px; overflow: hidden; }
 
 article.location .contact-metadata { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
@@ -2409,6 +2422,10 @@ article.location .contact-metadata .field:first-child { padding-top: 0px; }
 article.location .contact-metadata .field:last-child { border: none; }
 article.location .contact-metadata .field .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; }
 article.location .contact-metadata .field .field--item { text-align: right; float: right; }
+article.location .contact-metadata .field.field--name-field-phone-number .field--label:before, article.location .contact-metadata .field.field--name-field-location-address .field--label:before, article.location .contact-metadata .field.field--name-field-email .field--label:before { font-family: "Font Awesome 5 Free"; font-weight: bold; margin-right: 10px; content: ""; }
+article.location .contact-metadata .field.field--name-field-phone-number .field--label:before { content: "\f095"; }
+article.location .contact-metadata .field.field--name-field-location-address .field--label:before { content: "\f5a0"; }
+article.location .contact-metadata .field.field--name-field-email .field--label:before { content: "\f0e0"; }
 article.location .field--name-field-location-geolocation { border-right: 2px solid #e7e7e7; border-left: 2px solid #e7e7e7; }
 
 .view-id-service.view-display-id-block_1 .views-row { padding-top: 30px; }
@@ -2422,8 +2439,8 @@ article.location .field--name-field-location-geolocation { border-right: 2px sol
 .breadcrumb { padding-right: 0px; padding-left: 0px; }
 .breadcrumb li { color: #6d839c; font-weight: bold; }
 .breadcrumb li.active { color: #6d839c; }
-.breadcrumb li:first-child a { color: white; font-weight: normal; background: #6888ad; padding: 5px; border-radius: 4px; position: relative; border-bottom-right-radius: 0px; border-top-right-radius: 0px; }
-.breadcrumb li:first-child a:after { content: ''; width: 0; height: 0; border-top: 25px solid #6888ad; border-right: 12px solid transparent; position: absolute; top: 0px; margin-left: 5px; }
+.breadcrumb li:first-child a { color: white; font-weight: normal; background: #1c63a0; padding: 5px; border-radius: 4px; position: relative; border-bottom-right-radius: 0px; border-top-right-radius: 0px; }
+.breadcrumb li:first-child a:after { content: ''; width: 0; height: 0; border-top: 25px solid #1c63a0; border-right: 12px solid transparent; position: absolute; top: 0px; margin-left: 5px; }
 
 .breadcrumb > li + li:before { opacity: 0; padding: 0px; }
 

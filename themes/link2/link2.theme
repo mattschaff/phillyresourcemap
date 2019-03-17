@@ -7,6 +7,8 @@
  * Place your custom PHP code in this file.
  */
 
+use Drupal\taxonomy\Entity\Term;
+
  /**
 	* Implements hook_preprocess_views_view
 	*/
@@ -38,5 +40,43 @@ function link2_preprocess_views_view(&$vars){
 			}
 		}
 		$vars['rows'][0]['#rows'] = $new_rows;
+	}
+}
+
+/**
+* Implements hook_preprocess_views_view
+*/
+function link2_preprocess_node(&$vars) {
+	$node = $vars['node'];
+	if ($node->getType() === 'service') {
+		$reference = $node->get('field_service_category')->getValue();
+		$tid = $reference[0]['target_id'];
+		$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+		$vars['icon'] = $term->field_icon->value;
+	}
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb()
+ */
+function link2_preprocess_breadcrumb(&$vars) {
+  $service_tid = \Drupal::request()->query->get('svtid');
+  if (!empty($service_tid)) {
+  	$term = Term::load($service_tid);
+  	if (is_object($term)) {
+			for ($i=0; $i < count($vars['breadcrumb']); $i++) {
+				$vars['breadcrumb'][$i]['icon'] = $term->field_icon->value;
+			}
+  	}
+	}
+}
+
+/**
+ * Implements hook_preprocess_page()
+ */
+function link2_preprocess_page_title(&$vars) {
+	$term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+	if (!is_null($term) && $term->bundle() === 'service_type') {
+		$vars['icon'] = $term->field_icon->value;
 	}
 }

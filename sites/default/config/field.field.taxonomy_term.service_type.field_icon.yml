@@ -1,0 +1,21 @@
+uuid: 2f452d2c-8208-42b1-a65c-bce68648d196
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.service_type
+  module:
+    - text
+id: taxonomy_term.service_type.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: service_type
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
