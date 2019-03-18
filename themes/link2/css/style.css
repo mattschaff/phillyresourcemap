@@ -2445,8 +2445,8 @@ article.location .field--name-field-location-geolocation { border-right: 2px sol
 .breadcrumb { padding-right: 0px; padding-left: 0px; }
 .breadcrumb li { color: #6d839c; font-weight: bold; }
 .breadcrumb li.active { color: #6d839c; }
-.breadcrumb li:first-child a { color: white; font-weight: normal; background: #1c63a0; padding: 5px; border-radius: 4px; position: relative; border-bottom-right-radius: 0px; border-top-right-radius: 0px; }
-.breadcrumb li:first-child a:after { content: ''; width: 0; height: 0; border-top: 25px solid #1c63a0; border-right: 12px solid transparent; position: absolute; top: 0px; margin-left: 5px; }
+.breadcrumb li:first-child a { color: white; font-weight: normal; background: #1c63a0; padding: 5px; padding-right: 8px; border-radius: 4px; position: relative; }
+.breadcrumb .fa-angle-double-left { margin-right: 10px; }
 
 .breadcrumb > li + li:before { opacity: 0; padding: 0px; }
 

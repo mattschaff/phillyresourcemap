@@ -63,10 +63,10 @@ function link2_preprocess_breadcrumb(&$vars) {
   $service_tid = \Drupal::request()->query->get('svtid');
   if (!empty($service_tid)) {
   	$term = Term::load($service_tid);
-  	if (is_object($term)) {
-			for ($i=0; $i < count($vars['breadcrumb']); $i++) {
-				$vars['breadcrumb'][$i]['icon'] = $term->field_icon->value;
-			}
+  	if (is_object($term) && $term->bundle() === 'service_type') {
+			$vars['breadcrumb'][0]['icon'] = '<i class="fas fa-angle-double-left"></i>' . $term->field_icon->value;
+			$vars['breadcrumb'][0]['text'] = t('Back to ') . $term->getName();
+			unset($vars['breadcrumb'][1]);
   	}
 	}
 }

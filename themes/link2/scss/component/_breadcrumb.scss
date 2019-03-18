@@ -14,21 +14,16 @@
       font-weight: normal;
       background: #1c63a0;
       padding: 5px;
+      padding-right: 8px;
       border-radius: 4px;
       position: relative;
-      border-bottom-right-radius: 0px;
-      border-top-right-radius: 0px;
-      &:after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-top: 25px solid #1c63a0;
-        border-right: 12px solid transparent;
-        position: absolute;
-        top: 0px;
-        margin-left: 5px;
-      }
+      //border-bottom-right-radius: 0px;
+      //border-top-right-radius: 0px;
     }
+  }
+  .fa-angle-double-left {
+    //font-size: 20px;
+    margin-right: 10px;
   }
 }
 .breadcrumb > li + li:before {
