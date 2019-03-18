@@ -2297,8 +2297,14 @@ body.navbar-is-fixed-bottom { padding-bottom: 65px; }
 
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { background-color: #1C63B4; color: white; }
 
-.menu--main li i.fas { margin-right: 5px; }
-@media screen and (min-width: 768px) { .menu--main li span.text { display: none; } }
+.menu--main li i.fas, .menu--account li i.fas { margin-right: 5px; font-size: 16px; }
+@media screen and (min-width: 768px) { .menu--main li span.text, .menu--account li span.text { display: none; } }
+
+.path-frontpage .navbar-brand { display: none; }
+
+.menu--account { display: none; }
+
+.user-logged-in .menu--account { display: block; }
 
 /** Node styling. */
 .is-unpublished { background-color: #fff4f4; }

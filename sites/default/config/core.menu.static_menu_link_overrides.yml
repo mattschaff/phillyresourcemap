@@ -12,17 +12,17 @@ definitions:
     expanded: false
     enabled: false
   user__page:
-    enabled: true
+    weight: -50
+    parent: 'menu_link_content:427dcf84-dc4b-42ed-8301-ecbb3274af55'
     menu_name: account
-    parent: ''
+    enabled: true
     expanded: false
-    weight: -10
   user__logout:
-    enabled: true
+    weight: -49
+    parent: 'menu_link_content:427dcf84-dc4b-42ed-8301-ecbb3274af55'
     menu_name: account
-    parent: ''
-    weight: 10
     expanded: false
+    enabled: true
   comment__admin:
     weight: -60
     menu_name: admin

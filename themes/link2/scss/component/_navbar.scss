@@ -79,15 +79,30 @@ body {
   color: white;
 }
 
-.menu--main {
+.menu--main,
+.menu--account {
   li {
     i.fas {
       margin-right: 5px;
+      font-size: 16px;
     }
     @media #{$tablet} {
       span.text {
         display: none;
       }
     }
+  }
+}
+.path-frontpage {
+  .navbar-brand {
+    display: none;
+  }
+}
+.menu--account {
+  display: none;
+}
+.user-logged-in {
+  .menu--account {
+    display: block;
   }
 }

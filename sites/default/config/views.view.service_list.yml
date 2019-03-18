@@ -275,7 +275,7 @@ display:
           entity_field: vid
           plugin_id: bundle
       sorts: {  }
-      title: ''
+      title: 'Philly Resource Map'
       header:
         area:
           id: area
