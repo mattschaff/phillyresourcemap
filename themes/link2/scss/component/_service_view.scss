@@ -1,6 +1,37 @@
 .view-id-service_view {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  .views-exposed-form  {
+    .form-item {
+      margin-right: 10px;
+      label {
+        color: white;
+        background: #1c63a0;
+        padding: 7px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        -webkit-box-shadow: inset 0 -1px 0 #ddd;
+        box-shadow: inset 0 -1px 0 #ddd;
+        @media #{$mobile} {
+          padding-top: 10px;
+          padding-bottom: 6px;
+        }
+      }
+      .select-wrapper {
+        margin-left: -6px;
+      }
+    }
+  }
+  .views-row {
+    margin-bottom: 10px;
+    .views-field {
+      .panel {
+        display: block;
+        .location-name {
+          font-weight: bold;
+        }
+        .location-address {
+          float: right;
+        }
+      }
+    }
+  }
 }

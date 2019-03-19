@@ -41,6 +41,14 @@
     &::-ms-expand {
       opacity: 0;
     }
+    &.form-control {
+      padding-left: 15px;
+      padding-right: 25px;
+      background-image: none;
+      &:focus {
+        background-image: none;
+      }
+    }
   }
   &:after {
     color: $brand-primary;
@@ -73,6 +81,7 @@
     .has-warning & {
       color: $state-warning-text;
     }
+
   }
 }
 

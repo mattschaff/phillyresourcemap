@@ -19,7 +19,7 @@ function link2_preprocess_views_view(&$vars){
 		$new_rows = [];
 		$used_location_nids = [];
 		foreach ($rows as $row){
-			$location_nid = $row->node_field_data_node__field_associated_location_nid;
+			$location_nid = $row['#row']->node_field_data_node__field_associated_location_nid;
 			if (!in_array($location_nid, $used_location_nids)) {
 				$used_location_nids[] = $location_nid;
 				$new_rows[] = $row;

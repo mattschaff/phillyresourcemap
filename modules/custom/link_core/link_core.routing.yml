@@ -1,0 +1,7 @@
+link_core.dashboard:
+  path: '/dashboard'
+  defaults:
+    _controller: '\Drupal\link_core\Controller\DashboardController::getDashboard'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content'
