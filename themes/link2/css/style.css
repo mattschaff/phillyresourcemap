@@ -2406,6 +2406,8 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 #block-link2-views-block-service-block-2 .form-group .views-row { position: relative; display: inline-block; margin-top: 25px; margin-right: 20px; font-size: 16px; }
 #block-link2-views-block-service-block-2 .form-group .views-row .views-field-field-service-category a { font-weight: bold; }
 
+.page-node-type-service .tabs--primary li:first-child { display: none; }
+
 .view-id-service_view .views-exposed-form .form-item { margin-right: 10px; }
 .view-id-service_view .views-exposed-form .form-item label { color: white; background: #1c63a0; padding: 7px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; -webkit-box-shadow: inset 0 -1px 0 #ddd; box-shadow: inset 0 -1px 0 #ddd; }
 @media screen and (max-width: 767px) { .view-id-service_view .views-exposed-form .form-item label { padding-top: 10px; padding-bottom: 6px; } }

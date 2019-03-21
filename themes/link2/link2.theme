@@ -73,6 +73,12 @@ function link2_preprocess_breadcrumb(&$vars) {
 	if ($route_match->getRouteName() === 'entity.user.edit_form') {
 		$vars['breadcrumb'] = [];
 	}
+	if ($route_match->getRouteName() === 'entity.node.canonical') {
+		$node = $route_match->getParameter('node');
+		if ($node->bundle() === 'service') {
+			$vars['breadcrumb'] = [];
+		}
+	}
 	if (!in_array($route_match->getRouteName(), ['entity.node.edit_form', 'node.add'])) {
     return;
 	}
