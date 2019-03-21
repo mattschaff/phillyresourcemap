@@ -133,7 +133,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Website
           exclude: false
           alter:
             alter_text: false
@@ -269,7 +269,20 @@ display:
           group: 1
       sorts: {  }
       title: 'User Details'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h4>Profile</h4>'
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }

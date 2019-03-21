@@ -1,7 +1,16 @@
 .view-user-details {
   padding-right: 20px;
+  .view-header {
+    h4 {
+      color: gray;
+    }
+    border-bottom: 1px solid #eeeeee;
+  }
   .views-field {
     padding: 10px 0px;
+    .views-label {
+      color: gray;
+    }
     &.views-field-user-picture {
       text-align: right;
       img {

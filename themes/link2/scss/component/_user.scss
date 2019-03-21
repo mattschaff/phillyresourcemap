@@ -4,13 +4,22 @@
   }
 }
 .view-locations-on-user {
+  .view-header {
+    h4 {
+      color: gray;
+    }
+  }
+  .view-footer {
+    .add-location-container {
+      padding: 35px 0px 0px 0px;
+      text-align: right;
+    }
+  }
   .no-results {
     color: #999999;
     margin-top: 5px;
   }
   .panel {
-    .panel-heading  {
-    }
     .nav-tabs {
       margin-bottom: 0px;
       border: none;

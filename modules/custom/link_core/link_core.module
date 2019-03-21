@@ -1,6 +1,9 @@
 <?php
 
 use Drupal\taxonomy\Entity\Term;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Implements hook_preprocess_breadcrumb()
@@ -29,4 +32,14 @@ function link_core_preprocess_breadcrumb(&$variables) {
   }
   // set breadcrumbs to cache based on URL
   $variables['#cache']['contexts'][] = 'url.path';
+}
+
+function link_core_block_access(Block $block, $operation, AccountInterface $account) {
+	//if user profile view, access none
+	// $current_route = \Drupal::routeMatch();
+	// var_dump($current_route->getParameters()); die();
+	// if (isset()) {
+
+	// }
+	// return AccessResult::neutral();
 }

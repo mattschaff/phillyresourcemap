@@ -372,7 +372,20 @@ display:
           expose:
             label: ''
       title: 'Locations on User'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h4>Locations</h4>'
+            format: full_html
+          plugin_id: text
       footer:
         area:
           id: area
@@ -384,7 +397,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="service-add-container"><a class="btn btn-primary" href="/node/add/location?destination=/user">Add Location</a></div>'
+            value: '<div class="row add-location-container"><a class="btn btn-primary" href="/node/add/location?destination=/user">Add Location</a></div>'
             format: full_html
           plugin_id: text
       empty:

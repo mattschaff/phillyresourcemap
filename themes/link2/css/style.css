@@ -2436,6 +2436,8 @@ article.service.linklove .general-service-details, article.service .general-serv
 
 .path-user .main-container { max-width: 1170px; }
 
+.view-locations-on-user .view-header h4 { color: gray; }
+.view-locations-on-user .view-footer .add-location-container { padding: 35px 0px 0px 0px; text-align: right; }
 .view-locations-on-user .no-results { color: #999999; margin-top: 5px; }
 .view-locations-on-user .panel .nav-tabs { margin-bottom: 0px; border: none; }
 .view-locations-on-user .panel .nav-tabs li { float: right; }
@@ -2448,7 +2450,10 @@ article.service.linklove .general-service-details, article.service .general-serv
 .view-services-on-user-location .list-group li .service-edit { float: right; box-shadow: none; border: 1px solid #ddd; color: #777; }
 
 .view-user-details { padding-right: 20px; padding-bottom: 20px; }
+.view-user-details .view-header { border-bottom: 1px solid #eeeeee; }
+.view-user-details .view-header h4 { color: gray; }
 .view-user-details .views-field { padding: 10px 0px; }
+.view-user-details .views-field .views-label { color: gray; }
 .view-user-details .views-field.views-field-user-picture { text-align: right; }
 .view-user-details .views-field.views-field-user-picture img { display: inline-block; }
 .view-user-details .views-field.views-field-field-description { color: gray; text-align: justify; }
