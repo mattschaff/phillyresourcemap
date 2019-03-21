@@ -45,7 +45,17 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 		$path_items[1] === 'user' &&
 		isset($path_items[2]) &&
 		is_integer((int) $path_items[2])) {
-		return AccessResult::allowed();
+			if ($block->id() === 'views_block__locations_on_user_block_1') {
+				// if the user is authenticated && (it’s his profile or he’s an admin)
+				if (!\Drupal::currentUser()->isAnonymous() &&
+				(\Drupal::currentUser()->id() == (int) $path_items[2] ||
+				\Drupal::currentUser()->id() == 1)
+				) {
+					return AccessResult::allowed();
+				}
+				return AccessResult::forbidden();
+			}
+		return AccessResult::neutral();
 	}
 	return AccessResult::forbidden();
 	}
@@ -54,7 +64,7 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 			$current_path = \Drupal::service('path.current')->getPath();
 			$path_items = explode('/', $current_path);
 			if (count($path_items) === 3) {
-				return AccessResult::allowed();
+				return AccessResult::neutral();
 			}
 			else {
 				return AccessResult::forbidden();
