@@ -49,7 +49,8 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 				// if the user is authenticated && (it’s his profile or he’s an admin)
 				if (!\Drupal::currentUser()->isAnonymous() &&
 				(\Drupal::currentUser()->id() == (int) $path_items[2] ||
-				\Drupal::currentUser()->id() == 1)
+				\Drupal::currentUser()->id() == 1) ||
+				in_array('prm_administrator', \Drupal::currentUser()->getRoles())
 				) {
 					return AccessResult::allowed();
 				}
