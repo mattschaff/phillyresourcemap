@@ -35,11 +35,29 @@ function link_core_preprocess_breadcrumb(&$variables) {
 }
 
 function link_core_block_access(Block $block, $operation, AccountInterface $account) {
-	//if user profile view, access none
-	// $current_route = \Drupal::routeMatch();
-	// var_dump($current_route->getParameters()); die();
-	// if (isset()) {
-
-	// }
-	// return AccessResult::neutral();
+	if ($block->id() === 'views_block__locations_on_user_block_1' ||
+		$block->id() === 'views_block__user_details_block_1') {
+		$current_path = \Drupal::service('path.current')->getPath();
+		$path_items = explode('/', $current_path);
+		if (is_array($path_items) &&
+		count($path_items) == 3 &&
+		isset($path_items[1]) &&
+		$path_items[1] === 'user' &&
+		isset($path_items[2]) &&
+		is_integer((int) $path_items[2])) {
+		return AccessResult::allowed();
+	}
+	return AccessResult::forbidden();
+	}
+	if ($block->id() === 'link2_views_block__service_block_1' ||
+		$block->id() === 'link2_views_block__service_block_2') {
+			$current_path = \Drupal::service('path.current')->getPath();
+			$path_items = explode('/', $current_path);
+			if (count($path_items) === 3) {
+				return AccessResult::allowed();
+			}
+			else {
+				return AccessResult::forbidden();
+			}
+	}
 }
