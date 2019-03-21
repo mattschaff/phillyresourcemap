@@ -7,6 +7,8 @@ label: Organization
 weight: 3
 is_admin: null
 permissions:
+  - 'access contextual links'
+  - 'access in-place editing'
   - 'access user profiles'
   - 'create location content'
   - 'create service content'

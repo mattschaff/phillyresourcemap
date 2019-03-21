@@ -2448,6 +2448,7 @@ article.service.linklove .general-service-details, article.service .general-serv
 
 .view-services-on-user-location .well h5 { color: #999999; font-weight: bold; text-align: center; }
 .view-services-on-user-location .list-group li .service-edit { float: right; box-shadow: none; border: 1px solid #ddd; color: #777; }
+.view-services-on-user-location .list-group li .contextual { display: block; top: -4px; }
 
 .view-user-details { padding-right: 20px; padding-bottom: 20px; }
 .view-user-details .view-header { border-bottom: 1px solid #eeeeee; }
@@ -2647,6 +2648,11 @@ a { color: #1c63a0; }
 ul.nav-tabs { margin-bottom: 20px; }
 
 .alert-dismissible .close { top: -7px; }
+
+.role-organization .contextual { display: none; }
+.role-organization article .contextual { display: block; }
+
+.js-form-type-vertical-tabs { display: none; }
 
 /** jQuery UI autocomplete widget style overrides.  $todo Remove once jQuery UI is no longer used? */
 .ui-autocomplete { background: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); color: inherit; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; list-style: none; min-width: 160px; padding: 5px 0; text-align: left; z-index: 1000; }

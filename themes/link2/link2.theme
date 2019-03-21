@@ -80,3 +80,12 @@ function link2_preprocess_page_title(&$vars) {
 		$vars['icon'] = $term->field_icon->value;
 	}
 }
+
+/**
+ * Implements hook_preprocess_html()
+ */
+function link2_preprocess_html(&$variables) {
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+}

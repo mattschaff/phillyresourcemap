@@ -12,3 +12,18 @@ ul.nav-tabs {
     top: -7px;
   }
 }
+
+.role-organization {
+  .contextual {
+    display: none;
+  }
+  article {
+    .contextual {
+      display: block;
+    }
+  }
+}
+
+.js-form-type-vertical-tabs {
+  display: none;
+}

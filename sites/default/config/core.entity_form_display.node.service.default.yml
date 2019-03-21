@@ -37,7 +37,7 @@ third_party_settings:
         - field_tech_resources
         - field_classes
       parent_name: ''
-      weight: 16
+      weight: 9
       format_type: fieldset
       format_settings:
         label: 'Service-Specific Fields'
@@ -46,6 +46,49 @@ third_party_settings:
         classes: food
         required_fields: false
       label: 'Service-Specific Fields'
+    group_basic_deta:
+      children:
+        - title
+        - field_available
+        - field_associated_location
+        - field_service_category
+        - field_service_gender
+        - field_age_elibility
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        label: 'Basic Info'
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Basic Info'
+    group_details:
+      children:
+        - field_service_description
+        - field_application_process
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Details
+    group_scheud:
+      children:
+        - field_schedule
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: ''
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -53,7 +96,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -65,7 +108,7 @@ content:
     type: options_buttons
     region: content
   field_application_process:
-    weight: 14
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -85,7 +128,7 @@ content:
     type: options_buttons
     region: content
   field_can_cancel_advance_request:
-    weight: 2
+    weight: 22
     settings:
       display_label: true
     third_party_settings:
@@ -110,7 +153,7 @@ content:
     region: content
   field_classes:
     type: entity_reference_paragraphs
-    weight: 7
+    weight: 27
     settings:
       title: Class
       title_plural: Classes
@@ -139,7 +182,7 @@ content:
           bundle: service
     region: content
   field_food_rsvp:
-    weight: 1
+    weight: 21
     settings:
       display_label: true
     third_party_settings:
@@ -164,7 +207,7 @@ content:
     type: boolean_checkbox
     region: content
   field_housing_type:
-    weight: 3
+    weight: 23
     settings: {  }
     third_party_settings:
       conditional_fields:
@@ -188,7 +231,7 @@ content:
     type: options_buttons
     region: content
   field_medical_resource_type:
-    weight: 5
+    weight: 25
     settings: {  }
     third_party_settings:
       conditional_fields:
@@ -212,7 +255,7 @@ content:
     type: options_buttons
     region: content
   field_oral_products:
-    weight: 4
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -239,7 +282,7 @@ content:
     region: content
   field_schedule:
     type: entity_reference_paragraphs
-    weight: 15
+    weight: 11
     settings:
       title: 'Schedule Day'
       title_plural: 'Schedule Days'
@@ -256,7 +299,7 @@ content:
     type: options_select
     region: content
   field_service_description:
-    weight: 13
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -270,7 +313,7 @@ content:
     type: options_select
     region: content
   field_tech_resources:
-    weight: 6
+    weight: 26
     settings: {  }
     third_party_settings:
       conditional_fields:
@@ -295,7 +338,7 @@ content:
     region: content
   path:
     type: path
-    weight: 11
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -303,26 +346,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 3
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 6
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -330,7 +373,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

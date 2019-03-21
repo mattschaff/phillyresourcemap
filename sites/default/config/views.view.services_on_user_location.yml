@@ -206,7 +206,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"location-name col-xs-10\">{{ field_icon }} {{ title__value }}</span> \r\n<div class=\"col-xs-2\"><a href=\"/node/{{ nid }}/edit?destination=/user\" class=\"service-edit btn btn-default btn-xs\">Edit</a></div>"
+            text: "<span class=\"location-name col-xs-10\">{{ field_icon }} {{ title__value }}</span> \r\n<div class=\"col-xs-2\"><div class=\"contextual\"><a href=\"/node/{{ nid }}/edit?destination=/user\"  class=\"trigger\" title=\"Edit\"></a></div></a>\r\n\r\n</div>"
             make_link: false
             path: ''
             absolute: false
