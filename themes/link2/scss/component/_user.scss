@@ -27,6 +27,16 @@
         float: right;
         a {
           box-shadow: none;
+
+        }
+        .contextual {
+          top: 16px;
+          display: block;
+          .trigger {
+            height: 30px !important;
+            width: 30px !important;
+            border-radius: 18px;
+          }
         }
       }
     }

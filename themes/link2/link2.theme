@@ -69,6 +69,28 @@ function link2_preprocess_breadcrumb(&$vars) {
 			unset($vars['breadcrumb'][1]);
   	}
 	}
+	$route_match = \Drupal::routeMatch();
+	if ($route_match->getRouteName() === 'entity.user.edit_form') {
+		$vars['breadcrumb'] = [];
+	}
+	if (!in_array($route_match->getRouteName(), ['entity.node.edit_form', 'node.add'])) {
+    return;
+	}
+	$node = $route_match->getParameter('node');
+	if ((is_object($node) && ($node->bundle() == 'location' || $node->bundle() == 'service')) || $route_match->getRouteName() == 'node.add') {
+		$destination = \Drupal::request()->query->get('destination');
+		if (!empty($destination) && $destination === "/user") {
+			$crumb = [
+				'icon' => '<i class="fas fa-angle-double-left"></i>',
+				'text' => 'Back to Dashboard',
+				'url' => '/user',
+			];
+			$vars['breadcrumb'] = [$crumb];
+		}
+		else {
+			$vars['breadcrumb'] = [];
+		}
+	}
 }
 
 /**
