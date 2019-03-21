@@ -37,6 +37,7 @@ module:
   kint: 0
   link: 0
   link_core: 0
+  mail_login: 0
   menu_ui: 0
   node: 0
   options: 0

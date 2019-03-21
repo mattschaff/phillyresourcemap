@@ -17,7 +17,8 @@
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/field_group": "^1.0",
         "drupal/devel": "^2.0",
-        "drupal/views_field_view": "^1.0@beta"
+        "drupal/views_field_view": "^1.0@beta",
+        "drupal/mail_login": "^1.0"
     },
     "replace": {
         "drupal/core": "^8.6"
