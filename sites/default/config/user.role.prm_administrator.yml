@@ -1,0 +1,9 @@
+uuid: c09c5117-0082-469b-91a1-4f2853d4f620
+langcode: en
+status: true
+dependencies: {  }
+id: prm_administrator
+label: 'PRM Administrator'
+weight: 4
+is_admin: null
+permissions: {  }

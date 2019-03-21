@@ -1,0 +1,14 @@
+uuid: a37abc5a-5790-4485-ba3a-77ef2f5e1f90
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.prm_administrator
+  module:
+    - user
+id: user_add_role_action.prm_administrator
+label: 'Add the PRM Administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: prm_administrator

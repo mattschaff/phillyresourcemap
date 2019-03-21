@@ -1,0 +1,14 @@
+uuid: 050ab49d-6e55-4622-b8fe-3bbbc3913bc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.prm_administrator
+  module:
+    - user
+id: user_remove_role_action.prm_administrator
+label: 'Remove the PRM Administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: prm_administrator
