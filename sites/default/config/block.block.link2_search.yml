@@ -11,7 +11,7 @@ _core:
 id: link2_search
 theme: link2
 region: sidebar_second
-weight: -1
+weight: -8
 provider: null
 plugin: search_form_block
 settings:

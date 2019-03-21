@@ -1,0 +1,31 @@
+uuid: f0a7a4e9-9b85-421b-9b4b-ad665061bead
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:84f90d1b-9e14-4d01-b4d2-f9f75e33a533'
+  module:
+    - block_content
+    - system
+  theme:
+    - link2
+id: dashboardactions
+theme: link2
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:84f90d1b-9e14-4d01-b4d2-f9f75e33a533'
+settings:
+  id: 'block_content:84f90d1b-9e14-4d01-b4d2-f9f75e33a533'
+  label: 'Dashboard Actions'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

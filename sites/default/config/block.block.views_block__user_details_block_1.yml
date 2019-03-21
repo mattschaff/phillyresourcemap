@@ -1,0 +1,31 @@
+uuid: 3c1c772e-1db3-4e82-8b71-1a141bd01796
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_details
+  module:
+    - system
+    - views
+  theme:
+    - link2
+id: views_block__user_details_block_1
+theme: link2
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:user_details-block_1'
+settings:
+  id: 'views_block:user_details-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

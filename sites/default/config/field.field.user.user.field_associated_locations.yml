@@ -1,16 +1,17 @@
-uuid: cfeaf34a-a572-4e94-8ef5-a746648b738b
+uuid: 5ec49922-13c9-4390-a2cf-c18bf734cf65
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.profile.field_location
+    - field.storage.user.field_associated_locations
     - node.type.location
-    - profile.type.organization_profile
-id: profile.organization_profile.field_location
-field_name: field_location
-entity_type: profile
-bundle: organization_profile
-label: Location
+  module:
+    - user
+id: user.user.field_associated_locations
+field_name: field_associated_locations
+entity_type: user
+bundle: user
+label: 'Associated Locations'
 description: ''
 required: false
 translatable: false
@@ -23,6 +24,6 @@ settings:
       location: location
     sort:
       field: _none
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

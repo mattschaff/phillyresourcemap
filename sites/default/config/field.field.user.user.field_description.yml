@@ -1,0 +1,21 @@
+uuid: 5314c311-fece-4444-ad7e-fa58ec179cc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_description
+  module:
+    - text
+    - user
+id: user.user.field_description
+field_name: field_description
+entity_type: user
+bundle: user
+label: Description
+description: 'What should users of the Philly Resource Map know about your organization?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

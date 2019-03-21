@@ -6,4 +6,11 @@ id: organization
 label: Organization
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access user profiles'
+  - 'create location content'
+  - 'create service content'
+  - 'delete own location content'
+  - 'delete own service content'
+  - 'edit own location content'
+  - 'edit own service content'

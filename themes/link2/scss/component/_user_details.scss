@@ -1,0 +1,20 @@
+.view-user-details {
+  padding-right: 20px;
+  .views-field {
+    padding: 10px 0px;
+    &.views-field-user-picture {
+      text-align: right;
+      img {
+        display: inline-block;
+      }
+    }
+    &.views-field-field-description {
+      color: gray;
+      text-align: justify;
+    }
+    &.views-field-field-website {
+      text-align: right;
+    }
+  }
+  padding-bottom: 20px;
+}

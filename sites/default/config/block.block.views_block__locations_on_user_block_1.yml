@@ -1,0 +1,30 @@
+uuid: 1dd8d709-41d6-416a-bfe5-668453159488
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.locations_on_user
+  module:
+    - system
+    - views
+  theme:
+    - link2
+id: views_block__locations_on_user_block_1
+theme: link2
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:locations_on_user-block_1'
+settings:
+  id: 'views_block:locations_on_user-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

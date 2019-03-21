@@ -1,0 +1,25 @@
+uuid: e76f2550-11e1-4e4a-a4ae-2f56437df317
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1a332503-8bdb-4531-a900-9f63622db495'
+  module:
+    - block_content
+  theme:
+    - link2
+id: attribution
+theme: link2
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:1a332503-8bdb-4531-a900-9f63622db495'
+settings:
+  id: 'block_content:1a332503-8bdb-4531-a900-9f63622db495'
+  label: Attribution
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

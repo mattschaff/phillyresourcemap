@@ -1,13 +1,13 @@
-uuid: 579af400-8b45-4d18-bcc9-365110d8e5fd
+uuid: 630260e3-2689-45f8-afd9-b3ec7b4358fa
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - profile
-id: profile.field_location
-field_name: field_location
-entity_type: profile
+    - user
+id: user.field_associated_locations
+field_name: field_associated_locations
+entity_type: user
 type: entity_reference
 settings:
   target_type: node

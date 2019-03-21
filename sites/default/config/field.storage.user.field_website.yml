@@ -1,13 +1,13 @@
-uuid: 9c69fe21-73ec-4b5f-9b4d-e9ba528353c4
+uuid: 64e5f24a-6dab-490f-8697-4bb03b195804
 langcode: en
 status: true
 dependencies:
   module:
     - link
-    - profile
-id: profile.field_website
+    - user
+id: user.field_website
 field_name: field_website
-entity_type: profile
+entity_type: user
 type: link
 settings: {  }
 module: link

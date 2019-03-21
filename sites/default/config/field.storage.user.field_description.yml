@@ -1,13 +1,13 @@
-uuid: b19d17ec-e855-4a6e-909a-9b230f459447
+uuid: 73062ef4-64c8-4e6e-8c4e-67cab58a3a44
 langcode: en
 status: true
 dependencies:
   module:
-    - profile
     - text
-id: profile.field_description
+    - user
+id: user.field_description
 field_name: field_description
-entity_type: profile
+entity_type: user
 type: text_long
 settings: {  }
 module: text

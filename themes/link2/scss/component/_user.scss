@@ -1,0 +1,56 @@
+.path-user {
+  .main-container {
+    max-width: 1170px;
+  }
+}
+.view-locations-on-user {
+  .no-results {
+    color: #999999;
+    margin-top: 5px;
+  }
+  .panel {
+    .panel-heading  {
+    }
+    .nav-tabs {
+      margin-bottom: 0px;
+      border: none;
+      li {
+        float: right;
+        a {
+          box-shadow: none;
+        }
+      }
+    }
+    .panel-body {
+      .service-btn-container {
+        text-align: right;
+      }
+      h4 {
+        color: #999999;
+      }
+    }
+  }
+  .service-add-container {
+    margin-top: 20px;
+    text-align: right;
+  }
+}
+.view-services-on-user-location {
+  .well {
+    h5 {
+      color: #999999;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .list-group {
+    li {
+      .service-edit {
+        float:right;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        color: #777;
+      }
+    }
+  }
+}

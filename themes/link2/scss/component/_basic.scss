@@ -7,3 +7,8 @@ a {
 ul.nav-tabs {
   margin-bottom: 20px;
 }
+.alert-dismissible {
+  .close {
+    top: -7px;
+  }
+}

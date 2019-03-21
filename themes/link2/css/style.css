@@ -2248,6 +2248,8 @@ html.js .ajax-new-content:empty { display: none !important; }
 
 .nav.nav-tabs.filter-formats { margin-bottom: 15px; }
 
+footer .center-block { text-align: center; }
+
 /** Form styles. */
 table .checkbox.form-no-label, table .radio.form-no-label { margin-bottom: 0; margin-top: 0; }
 
@@ -2431,6 +2433,26 @@ article.service.linklove .service-specific-details .panel-heading .panel-title:b
 article.service.linklove .service-specific-details .panel-heading .panel-title:before, article.service .service-specific-details .panel-heading .panel-title:before { right: 0.5em; margin-left: -50%; }
 article.service.linklove .service-specific-details .panel-heading .panel-title:after, article.service .service-specific-details .panel-heading .panel-title:after { left: 0.5em; margin-right: -50%; }
 article.service.linklove .general-service-details, article.service .general-service-details { margin-bottom: 20px; overflow: hidden; }
+
+.path-user .main-container { max-width: 1170px; }
+
+.view-locations-on-user .no-results { color: #999999; margin-top: 5px; }
+.view-locations-on-user .panel .nav-tabs { margin-bottom: 0px; border: none; }
+.view-locations-on-user .panel .nav-tabs li { float: right; }
+.view-locations-on-user .panel .nav-tabs li a { box-shadow: none; }
+.view-locations-on-user .panel .panel-body .service-btn-container { text-align: right; }
+.view-locations-on-user .panel .panel-body h4 { color: #999999; }
+.view-locations-on-user .service-add-container { margin-top: 20px; text-align: right; }
+
+.view-services-on-user-location .well h5 { color: #999999; font-weight: bold; text-align: center; }
+.view-services-on-user-location .list-group li .service-edit { float: right; box-shadow: none; border: 1px solid #ddd; color: #777; }
+
+.view-user-details { padding-right: 20px; padding-bottom: 20px; }
+.view-user-details .views-field { padding: 10px 0px; }
+.view-user-details .views-field.views-field-user-picture { text-align: right; }
+.view-user-details .views-field.views-field-user-picture img { display: inline-block; }
+.view-user-details .views-field.views-field-field-description { color: gray; text-align: justify; }
+.view-user-details .views-field.views-field-field-website { text-align: right; }
 
 article.location .contact-metadata { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-top: none; box-sizing: border-box; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; overflow: hidden; }
 article.location .contact-metadata .field { clear: both; padding: 20px 20px; overflow: hidden; border-bottom: 1px solid #eeeeee; }
@@ -2618,6 +2640,8 @@ a { color: #1c63a0; }
 .btn-primary { background-color: #1c63a0; }
 
 ul.nav-tabs { margin-bottom: 20px; }
+
+.alert-dismissible .close { top: -7px; }
 
 /** jQuery UI autocomplete widget style overrides.  $todo Remove once jQuery UI is no longer used? */
 .ui-autocomplete { background: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); color: inherit; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; list-style: none; min-width: 160px; padding: 5px 0; text-align: left; z-index: 1000; }
