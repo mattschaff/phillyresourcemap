@@ -2437,6 +2437,7 @@ article.service.linklove .service-specific-details .panel-heading .panel-title:a
 article.service.linklove .general-service-details, article.service .general-service-details { margin-bottom: 20px; overflow: hidden; }
 
 .path-user .main-container { max-width: 1170px; }
+.path-user #user-form { max-width: 768px; margin: auto; }
 
 .view-locations-on-user .view-header h4 { color: gray; }
 .view-locations-on-user .view-footer .add-location-container { padding: 35px 0px 0px 0px; text-align: right; }
