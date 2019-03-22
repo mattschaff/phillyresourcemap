@@ -36,7 +36,8 @@ function link_core_preprocess_breadcrumb(&$variables) {
 
 function link_core_block_access(Block $block, $operation, AccountInterface $account) {
 	if ($block->id() === 'views_block__locations_on_user_block_1' ||
-		$block->id() === 'views_block__user_details_block_1') {
+		$block->id() === 'views_block__user_details_block_1' ||
+		$block->id() === 'views_block__locations_on_user_block_2') {
 		$current_path = \Drupal::service('path.current')->getPath();
 		$path_items = explode('/', $current_path);
 		if (is_array($path_items) &&
@@ -52,6 +53,16 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 				\Drupal::currentUser()->id() == 1) ||
 				in_array('prm_administrator', \Drupal::currentUser()->getRoles())
 				) {
+					return AccessResult::allowed();
+				}
+				return AccessResult::forbidden();
+			}
+			if ($block->id() === 'views_block__locations_on_user_block_2') {
+				// if the user is not authenticated OR it's someone else's profile & it's not an admin
+				if (\Drupal::currentUser()->isAnonymous() ||
+				(\Drupal::currentUser()->id() != (int) $path_items[2] &&
+				\Drupal::currentUser()->id() != 1) &&
+				!in_array('prm_administrator', \Drupal::currentUser()->getRoles())) {
 					return AccessResult::allowed();
 				}
 				return AccessResult::forbidden();
