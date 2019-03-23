@@ -1,4 +1,4 @@
-uuid: 1dd8d709-41d6-416a-bfe5-668453159488
+uuid: 5a5f3557-639a-4b3e-8e6d-73c819ddf903
 langcode: en
 status: true
 dependencies:
@@ -9,19 +9,20 @@ dependencies:
     - views
   theme:
     - link2
-id: views_block__locations_on_user_block_1
+id: views_block__locations_on_user_block_2
 theme: link2
 region: content
-weight: -9
+weight: -8
 provider: null
-plugin: 'views_block:locations_on_user-block_1'
+plugin: 'views_block:locations_on_user-block_2'
 settings:
-  id: 'views_block:locations_on_user-block_1'
+  id: 'views_block:locations_on_user-block_2'
   label: ''
   provider: views
   label_display: '0'
   views_label: ''
   items_per_page: none
+  context_mapping: {  }
 visibility:
   request_path:
     id: request_path

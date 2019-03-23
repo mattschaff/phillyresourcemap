@@ -7,16 +7,16 @@ dependencies:
 id: service_content
 label: 'Service Content'
 type: 'canonical_entities:node'
-pattern: 'services/[node:field_service_category]/[node:title]'
+pattern: 'locations/[node:field_associated_location:entity:title]/[node:title]'
 selection_criteria:
-  53ecb931-7655-47e4-a611-6f2c115930f7:
+  4d18e1d0-dcd7-42d6-ad04-0e0af72af453:
     id: node_type
     bundles:
       service: service
     negate: false
     context_mapping:
       node: node
-    uuid: 53ecb931-7655-47e4-a611-6f2c115930f7
+    uuid: 4d18e1d0-dcd7-42d6-ad04-0e0af72af453
 selection_logic: and
 weight: -5
 relationships: {  }

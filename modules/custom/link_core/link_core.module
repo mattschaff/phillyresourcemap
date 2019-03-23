@@ -4,6 +4,10 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\block\Entity\Block;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_breadcrumb()
@@ -34,18 +38,24 @@ function link_core_preprocess_breadcrumb(&$variables) {
   $variables['#cache']['contexts'][] = 'url.path';
 }
 
+/**
+ * Implements hook_block_access()
+ */
 function link_core_block_access(Block $block, $operation, AccountInterface $account) {
+	// control access for blocks on user profile dashboard
 	if ($block->id() === 'views_block__locations_on_user_block_1' ||
 		$block->id() === 'views_block__user_details_block_1' ||
 		$block->id() === 'views_block__locations_on_user_block_2') {
 		$current_path = \Drupal::service('path.current')->getPath();
 		$path_items = explode('/', $current_path);
+		// only show dashboard blocks on the actual profile, not operation pages
 		if (is_array($path_items) &&
 		count($path_items) == 3 &&
 		isset($path_items[1]) &&
 		$path_items[1] === 'user' &&
 		isset($path_items[2]) &&
 		is_integer((int) $path_items[2])) {
+			// control access to editing or static location blocks based on user role
 			if ($block->id() === 'views_block__locations_on_user_block_1') {
 				// if the user is authenticated && (it’s his profile or he’s an admin)
 				if (!\Drupal::currentUser()->isAnonymous() &&
@@ -71,6 +81,8 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 	}
 	return AccessResult::forbidden();
 	}
+	// control access for services block
+		// make sure it doesn't show up on location operation pages
 	if ($block->id() === 'link2_views_block__service_block_1' ||
 		$block->id() === 'link2_views_block__service_block_2') {
 			$current_path = \Drupal::service('path.current')->getPath();
@@ -82,4 +94,54 @@ function link_core_block_access(Block $block, $operation, AccountInterface $acco
 				return AccessResult::forbidden();
 			}
 	}
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function link_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+	switch ($form_id) {
+		// if role is organization, change access & value of associated location field on service form
+		case 'node_service_edit_form':
+			if (in_array('organization', \Drupal::currentUser()->getRoles())) {
+				$form['field_associated_location']['#access'] = FALSE;
+			}
+		break;
+		// if role is organization on a service add form, make sure location parameter is set
+		case 'node_service_form':
+			$is_org = in_array('organization', \Drupal::currentUser()->getRoles());
+			$location_id = \Drupal::request()->query->get('location');
+			$error_message = t("You have tried to associate a new service with an invalid location.");
+			if (($is_org && is_null($location_id)) ||
+			 !is_integer((int) $location_id)) {
+				_link_core_redirect('/user', $error_message);
+			}
+			if ($is_org) {
+				// see if location is an entity && see if the current person is the author
+				$node = Node::load($location_id);
+				if (is_object($node) && \Drupal::currentUser()->id() === $node->getOwnerId()) {
+					$form['field_associated_location']['#access'] = FALSE;
+					$form['field_associated_location']['widget']['#default_value'] = $node->id();
+				}
+				else {
+					_link_core_redirect('/user', $error_message);
+				}
+			}
+		break;
+	}
+}
+
+/**
+ * Redirects with warning message
+ *
+ * @param string $url
+ * @param string $message
+ */
+function _link_core_redirect($url, $message = NULL) {
+	$response = new RedirectResponse($url, 302);
+	$response->send();
+	if ($message) {
+		\Drupal::messenger()->addWarning($message);
+	}
+	exit;
 }

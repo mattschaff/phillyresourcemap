@@ -79,11 +79,14 @@ function link2_preprocess_breadcrumb(&$vars) {
 			$vars['breadcrumb'] = [];
 		}
 	}
-	if (!in_array($route_match->getRouteName(), ['entity.node.edit_form', 'node.add'])) {
+	if (!in_array($route_match->getRouteName(), ['entity.node.edit_form', 'node.add', 'entity.node.delete_form'])) {
     return;
 	}
 	$node = $route_match->getParameter('node');
-	if ((is_object($node) && ($node->bundle() == 'location' || $node->bundle() == 'service')) || $route_match->getRouteName() == 'node.add') {
+	if ((is_object($node) && ($node->bundle() == 'location' ||
+	$node->bundle() == 'service')) ||
+	$route_match->getRouteName() == 'node.add' ||
+	$route_match->getRouteName() == 'entity.node.delete_form') {
 		$destination = \Drupal::request()->query->get('destination');
 		if (!empty($destination) && $destination === "/user") {
 			$crumb = [
