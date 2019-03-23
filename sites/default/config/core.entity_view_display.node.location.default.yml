@@ -66,32 +66,32 @@ content:
     weight: 2
     label: hidden
     settings:
-      title: ''
       set_marker: '1'
-      common_map: ''
+      title: ''
       info_text: ''
-      use_overridden_map_settings: 0
       google_map_settings:
+        height: 400px
+        width: 100%
         type: ROADMAP
-        zoom: '10'
-        minZoom: 0
+        zoom: '14'
         maxZoom: 18
-        rotateControl: 0
+        minZoom: 0
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
-        fullscreenControl: 0
         scrollwheel: 1
-        disableDoubleClickZoom: 0
+        gestureHandling: auto
         draggable: 1
-        height: 400px
-        width: 100%
+        style: ''
         info_auto_display: 1
         marker_icon_path: ''
         disableAutoPan: 1
-        style: ''
+        rotateControl: 0
+        fullscreenControl: 0
         preferScrollingToZooming: 0
-        gestureHandling: auto
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
     third_party_settings: {  }
     type: geolocation_map
     region: content
