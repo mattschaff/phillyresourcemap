@@ -283,7 +283,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"panel-heading col-md-10\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}\" >{{ title__value }}</a></h3></div>\r\n<div class=\"col-md-2\">\r\n<ul class=\"nav nav-tabs\">\r\n<li><div class=\"contextual\"><a href=\"/node/{{ nid }}/edit?destination=/user\"  class=\"trigger\" title=\"Edit\"></a></div></li>\r\n</ul>\r\n</div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n{{ field_location_geolocation }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n<div class=\"service-btn-container\"><a href=\"/node/add/service?location={{ nid }}&destination=/user\" class=\"btn btn-primary btn-sm\">Add Service</a></div>\r\n</div>\r\n</div>"
+            text: "<div class=\"panel-heading col-md-10\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}?destination=/user\" >{{ title__value }}</a></h3></div>\r\n<div class=\"col-md-2\">\r\n<ul class=\"nav nav-tabs\">\r\n<li><div class=\"contextual\"><a href=\"/node/{{ nid }}/edit?destination=/user\"  class=\"trigger\" title=\"Edit\"></a></div></li>\r\n</ul>\r\n</div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n{{ field_location_geolocation }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n<div class=\"service-btn-container\"><a href=\"/node/add/service?location={{ nid }}&destination=/user\" class=\"btn btn-primary btn-sm\">Add Service</a></div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
