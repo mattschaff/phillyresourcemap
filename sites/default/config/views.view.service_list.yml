@@ -56,6 +56,10 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: col-md-6
+          default_row_class: true
       row:
         type: fields
       fields:
@@ -276,7 +280,8 @@ display:
           plugin_id: bundle
       sorts: {  }
       title: 'Philly Resource Map'
-      header:
+      header: {  }
+      footer:
         area:
           id: area
           table: views
@@ -284,17 +289,17 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
+          empty: false
           tokenize: false
           content:
             value: "<span data-align=\"center\" class=\"text-center\">What service are you looking for?</span>\r\n<br/>"
             format: full_html
           plugin_id: text
-      footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: clearfix
     cache_metadata:
       max-age: -1
       contexts:

@@ -2248,7 +2248,7 @@ html.js .ajax-new-content:empty { display: none !important; }
 
 .nav.nav-tabs.filter-formats { margin-bottom: 15px; }
 
-footer .center-block { text-align: center; }
+footer .center-block { text-align: center; font-size: 14px; }
 
 /** Form styles. */
 table .checkbox.form-no-label, table .radio.form-no-label { margin-bottom: 0; margin-top: 0; }
@@ -2394,7 +2394,7 @@ body.toolbar-loading { margin-top: 0; }
 body.toolbar-loading.toolbar { margin-bottom: 15px; }
 
 /** Architecture module styling. */
-.main-container { max-width: 768px; }
+.main-container { max-width: 768px; min-height: 450px; }
 
 .navbar.container { max-width: 800px; }
 
@@ -2408,16 +2408,28 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 
 .page-node-type-service .tabs--primary li:first-child { display: none; }
 
-.view-id-service_view .views-exposed-form .form-item { margin-right: 10px; }
+.view-id-service_view .views-exposed-form #edit-submit-service-view { display: none; }
+.view-id-service_view .views-exposed-form .form-item { margin-right: 10px; margin-bottom: 15px; }
 .view-id-service_view .views-exposed-form .form-item label { color: white; background: #1c63a0; padding: 7px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; -webkit-box-shadow: inset 0 -1px 0 #ddd; box-shadow: inset 0 -1px 0 #ddd; }
 @media screen and (max-width: 767px) { .view-id-service_view .views-exposed-form .form-item label { padding-top: 10px; padding-bottom: 6px; } }
 .view-id-service_view .views-exposed-form .form-item .select-wrapper { margin-left: -6px; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox { position: relative; margin-top: 0px; width: 80px; height: 40px; max-width: 125px; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label { color: transparent; background: none; box-shadow: none; padding: 0px; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input { border-radius: 4px; border: 2px solid #1c63a0; background: none; color: #1c63a0; padding: 5px 7px; position: absolute; margin: 0px; width: 81px; height: 33px; text-align: center; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:before { border: none; content: 'Available'; color: #1c63a0; transform: none; position: relative !important; border: none; display: block; text-align: center; width: 100%; height: 10px; left: 0px !important; top: 1px; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:after { display: none; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:checked:before { color: white; font-weight: bold; top: 0px; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:checked { background-color: #1c63a0; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value { width: inherit; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value label input { width: inherit; }
+.view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value label input:before { content: 'Can Call Ahead'; }
 .view-id-service_view .views-row { margin-bottom: 10px; }
 .view-id-service_view .views-row .views-field .panel { display: block; }
 .view-id-service_view .views-row .views-field .panel .location-name { font-weight: bold; }
 .view-id-service_view .views-row .views-field .panel .location-address { float: right; }
 
-.view-service-list .view-header { color: #999999; font-size: 18px; }
+.view-service-list { padding-top: 30px; }
+.view-service-list .view-footer { color: #999999; font-size: 18px; clear: both; padding-top: 20px; }
 
 article.service.linklove, article.service { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
 article.service.linklove h2, article.service h2 { margin-top: 10px; color: #6d839c; padding: 0px 15px; }

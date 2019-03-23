@@ -1,0 +1,5 @@
+enable_override: 1
+view: service_view
+view_display: page_5
+inherit_settings: 0
+pass_arguments: 1

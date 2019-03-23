@@ -18,7 +18,8 @@
         "drupal/field_group": "^1.0",
         "drupal/devel": "^2.0",
         "drupal/views_field_view": "^1.0@beta",
-        "drupal/mail_login": "^1.0"
+        "drupal/mail_login": "^1.0",
+        "drupal/tvi": "^1.0@beta"
     },
     "replace": {
         "drupal/core": "^8.6"

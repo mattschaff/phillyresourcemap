@@ -6228,5 +6228,67 @@
             "issues": "http://drupal.org/project/issues/mail_login",
             "email": "mqanneh@gmail.com"
         }
+    },
+    {
+        "name": "drupal/tvi",
+        "version": "1.0.0-beta2",
+        "version_normalized": "1.0.0.0-beta2",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/tvi",
+            "reference": "8.x-1.0-beta2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/tvi-8.x-1.0-beta2.zip",
+            "reference": "8.x-1.0-beta2",
+            "shasum": "d957687d8449b198dbec115b00b5828624899757"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-beta2",
+                "datestamp": "1507753443",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Beta releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Kevin Quillen (kevinquillen)",
+                "homepage": "https://www.drupal.org/u/kevinquillen",
+                "role": "Maintainer"
+            },
+            {
+                "name": "derekwebb1",
+                "homepage": "https://www.drupal.org/user/64114"
+            },
+            {
+                "name": "kevinquillen",
+                "homepage": "https://www.drupal.org/user/317279"
+            }
+        ],
+        "description": "Enables you to change the presentation of taxonomy term pages with Views, allowing you to create multiple Views on the same path with different output.",
+        "homepage": "http://drupal.org/project/tvi",
+        "keywords": [
+            "Drupal"
+        ],
+        "support": {
+            "source": "http://cgit.drupalcode.org/tvi",
+            "issues": "http://drupal.org/project/issues/tvi"
+        }
     }
 ]
