@@ -342,6 +342,20 @@ display:
           plugin_id: text
       defaults:
         header: false
+        sorts: false
+      sorts:
+        field_service_category_target_id:
+          id: field_service_category_target_id
+          table: node__field_service_category
+          field: field_service_category_target_id
+          relationship: reverse__node__field_associated_location
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
