@@ -67,6 +67,7 @@ function link2_preprocess_breadcrumb(&$vars) {
 			$vars['breadcrumb'][0]['icon'] = '<i class="fas fa-angle-double-left"></i>' . $term->field_icon->value;
 			$vars['breadcrumb'][0]['text'] = t('Back to ') . $term->getName();
 			unset($vars['breadcrumb'][1]);
+			return;
   	}
 	}
 	$route_match = \Drupal::routeMatch();
