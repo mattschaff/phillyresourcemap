@@ -2431,7 +2431,7 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 .view-service-list { padding-top: 30px; }
 .view-service-list .view-footer { color: #999999; font-size: 18px; clear: both; padding-top: 20px; }
 
-article.service.linklove, article.service { width: 100%; background: #fff; padding: 20px; border: 2px solid #e7e7e7; border-radius: 4px; position: relative; }
+article.service.linklove, article.service { width: 100%; background: #fff; padding: 20px; border: none; border-radius: 2px; -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); position: relative; }
 article.service.linklove h2, article.service h2 { margin-top: 10px; color: #6d839c; padding: 0px 15px; }
 article.service.linklove h2 i.fas, article.service h2 i.fas { color: #1c63a0; }
 article.service.linklove .field--label, article.service .field--label { display: inline-block; font-weight: 700; margin-right: 8px; color: #999999; font-size: 18px; margin-top: 10px; }
