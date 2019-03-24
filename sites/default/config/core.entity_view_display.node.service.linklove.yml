@@ -41,10 +41,11 @@ third_party_settings:
       weight: 9
       format_type: fieldset
       format_settings:
+        label: 'Category-Specific Details'
+        description: ''
         id: ''
         classes: service-specific-details
-        description: ''
-      label: 'Service-Specific Details'
+      label: 'Category-Specific Details'
     group_general_service_details:
       children:
         - links

@@ -10,102 +10,16 @@ dependencies:
     - field.field.node.location.field_phone_number
     - node.type.location
   module:
-    - address
-    - field_group
-    - geolocation
-    - telephone
-    - text
     - user
-third_party_settings:
-  field_group:
-    group_contact_metadata:
-      children:
-        - field_location_address
-        - field_phone_number
-        - field_email
-      parent_name: ''
-      weight: 4
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: contact-metadata
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: ''
 id: node.location.default
 targetEntityType: node
 bundle: location
 mode: default
-content:
-  field_email:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: email_mailto
-    region: content
-  field_location_address:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: address_default
-    region: content
-  field_location_description:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_location_geolocation:
-    weight: 2
-    label: hidden
-    settings:
-      set_marker: '1'
-      title: ''
-      info_text: ''
-      google_map_settings:
-        height: 400px
-        width: 100%
-        type: ROADMAP
-        zoom: '14'
-        maxZoom: 18
-        minZoom: 0
-        mapTypeControl: 1
-        streetViewControl: 1
-        zoomControl: 1
-        scrollwheel: 1
-        gestureHandling: auto
-        draggable: 1
-        style: ''
-        info_auto_display: 1
-        marker_icon_path: ''
-        disableAutoPan: 1
-        rotateControl: 0
-        fullscreenControl: 0
-        preferScrollingToZooming: 0
-        disableDoubleClickZoom: 0
-      use_overridden_map_settings: 0
-      common_map: ''
-    third_party_settings: {  }
-    type: geolocation_map
-    region: content
-  field_phone_number:
-    weight: 4
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    type: telephone_link
-    region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+content: {  }
+hidden:
+  field_email: true
+  field_location_address: true
+  field_location_description: true
+  field_location_geolocation: true
+  field_phone_number: true
+  links: true

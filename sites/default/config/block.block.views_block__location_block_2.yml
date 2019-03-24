@@ -1,31 +1,31 @@
-uuid: 90d31ff8-0d32-4c94-b216-4f3f63672d10
+uuid: 81c36494-f195-44a4-9f45-fa6e3347ed94
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.service
+    - views.view.location
   module:
-    - ctools
+    - node
     - views
   theme:
     - link2
-id: link2_views_block__service_block_1
+id: views_block__location_block_2
 theme: link2
 region: content
-weight: -5
+weight: -10
 provider: null
-plugin: 'views_block:service-block_1'
+plugin: 'views_block:location-block_2'
 settings:
-  id: 'views_block:service-block_1'
+  id: 'views_block:location-block_2'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
   context_mapping: {  }
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  node_type:
+    id: node_type
     bundles:
       location: location
     negate: false
