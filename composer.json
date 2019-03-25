@@ -19,7 +19,8 @@
         "drupal/devel": "^2.0",
         "drupal/views_field_view": "^1.0@beta",
         "drupal/mail_login": "^1.0",
-        "drupal/tvi": "^1.0@beta"
+        "drupal/tvi": "^1.0@beta",
+        "drupal/twig_tweak": "^2.1"
     },
     "replace": {
         "drupal/core": "^8.6"
