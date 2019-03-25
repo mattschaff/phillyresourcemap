@@ -2,7 +2,11 @@ framework:
   css:
     theme:
       css/style.css: {}
-  js: 
+      'https://fonts.googleapis.com/css?family=Rubik': { type: external }
+      'https://use.fontawesome.com/releases/v5.7.2/css/all.css': { type: external }
+
+  js:
+    js/custom/prm.js: {}
     bootstrap/assets/javascripts/bootstrap/affix.js: {}
     bootstrap/assets/javascripts/bootstrap/alert.js: {}
     bootstrap/assets/javascripts/bootstrap/button.js: {}
@@ -15,14 +19,3 @@ framework:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
-default:
-  css:
-    theme:
-      'https://fonts.googleapis.com/css?family=Rubik': { type: external }
-      'https://use.fontawesome.com/releases/v5.7.2/css/all.css': { type: external }
-  js:
-    js/contrib/headroom.min.js: {}
-    js/custom/prm.js: {}
-  dependencies:
-    - core/jquery
-    - link2/framework

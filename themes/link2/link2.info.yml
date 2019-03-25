@@ -19,9 +19,6 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
-libraries:
-  - link2/default
-
 libraries-extend:
   bootstrap/framework:
     - link2/framework
