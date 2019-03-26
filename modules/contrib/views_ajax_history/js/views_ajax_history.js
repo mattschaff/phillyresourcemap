@@ -241,6 +241,27 @@
         }
       });
 
+       // If the exposed form has checkboxes, we need to check if these are unchecked and if so, remove them from the url
+      element.find('input[type="checkbox"]').each(function (key, value) {
+        if (!form_values[this.name]) {
+          if (currentQuery[this.name]) {
+            delete currentQuery[this.name];
+          }
+          else if (options.data[this.name]) {
+            delete options.data[this.name];
+          }
+        }
+      });
+
+      // If the exposed form has a mutiple select
+      element.find('.form-select[multiple=multiple]')
+        .each(function (key, value) {
+          if ($(value).val().length == 0) {
+            delete options.data[this.name];
+            delete currentQuery[this.name];
+          }
+        });
+
       url += (/\?/.test(url) ? '&' : '?') + $.param(currentQuery);
       addState(options, url);
     }
