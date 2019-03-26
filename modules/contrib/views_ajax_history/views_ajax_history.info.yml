@@ -1,0 +1,13 @@
+type: module
+name: 'Views AJAX History'
+description: 'Add bookmarking abilities to AJAX Views.'
+# core: 8.x
+package: Views
+dependencies:
+  - views
+
+# Information added by Drupal.org packaging script on 2018-08-27
+version: '8.x-1.0'
+core: '8.x'
+project: 'views_ajax_history'
+datestamp: 1535376604

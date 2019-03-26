@@ -59,6 +59,7 @@ module:
   tvi: 0
   twig_tweak: 0
   user: 0
+  views_ajax_history: 0
   views_field_view: 0
   views_ui: 0
   menu_link_content: 1
