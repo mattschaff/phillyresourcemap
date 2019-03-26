@@ -4,6 +4,12 @@
 */
 use Foo\{function bar, const BAZ};
 
+use /* comment */ function bar\math\{
+    Msin,
+    level\Mcos as BarCos,
+    Mcosh,
+};
+
 include $blah;
 
 
@@ -19,7 +25,6 @@ function foo()
 {
 }//end foo()
 
-
 function func1() {
 
 }//end func1()
@@ -29,7 +34,6 @@ function func2() {
 
 }//end func2()
 
-
 function func3() {
 
 }//end func3()
@@ -37,6 +41,34 @@ function func3() {
 
 class MyClass
 {
+    function func1() {
+
+    }//end func1()
+
+
+    function func2() {
+
+    }//end func2()
+
+    function func3() {
+
+    }//end func3()
+}//end class
+
+
+interface MyInterface
+{
+    function func1();
+
+
+    function func2();
+
+    function func3();
+}//end interface
+
+
+class MyClass
+{
 
 
     function func1() {
@@ -47,6 +79,7 @@ class MyClass
     function func2() {
 
     }//end func2()
+
 
 
     function func3() {
@@ -67,43 +100,6 @@ interface MyInterface
     function func2();
 
 
-    function func3();
-
-
-}//end interface
-
-
-class MyClass
-{
-
-
-    function func1() {
-
-    }//end func1()
-
-
-    function func2() {
-
-    }//end func2()
-
-
-    function func3() {
-
-    }//end func3()
-
-
-}//end class
-
-
-interface MyInterface
-{
-
-
-    function func1();
-
-
-    function func2();
-
 
     function func3();
 
@@ -112,23 +108,15 @@ interface MyInterface
 
 class MyClass
 {
-
-
     function func1() {
 
     }//end func1()
-
-
 }//end class
 
 
 interface MyInterface
 {
-
-
     function func1();
-
-
 }//end interface
 
 
@@ -152,7 +140,6 @@ class MyClass
 
     }//end func1()
 
-
     /**
      * Function comment.
      *
@@ -172,13 +159,11 @@ class MyClass
 
     }//end func3()
 
-
 }//end class
 
 
 interface MyInterface
 {
-
 
     /**
      * Function comment.
@@ -186,6 +171,7 @@ interface MyInterface
      * @return boolean
      */
     function func1();
+
 
 
     /**
@@ -202,7 +188,6 @@ interface MyInterface
      * @return boolean
      */
     function func3();
-
 
 }//end interface
 
@@ -231,13 +216,13 @@ class MyClass
 interface MyInterface
 {
 
-
     /**
      * Function comment.
      *
      * @return boolean
      */
     function func1();
+
 
     /**
      * Function comment.
@@ -293,12 +278,8 @@ $callback = function ($bar) use ($foo)
 
 class MyClass
 {
-
-
     function func1() {
     }
-
-
 }
 
 
@@ -308,24 +289,18 @@ function test() {
 
 
 if ($foo) {
-
-
     /**
      * Comment
      */
     function foo() {
         // Code here
     }
-
-
     /**
      * Comment
      */
     function bar() {
         // Code here
     }
-
-
 }
 
 // foo
@@ -344,7 +319,6 @@ class MyClass
 {
     protected $tag = '';
 
-
     /**
      * Function comment.
      *
@@ -354,7 +328,6 @@ class MyClass
 
     }//end func1()
 
-
     /**
      * Function comment.
      *
@@ -363,15 +336,13 @@ class MyClass
     private static function func2() {
 
     }//end func1()
+
+
 }//end class
 
 class MyClass {
     function a(){}
-
-
     function b(){}
-
-
     function c(){}
 }
 
@@ -380,23 +351,15 @@ class MyClass {
 // phpcs:set Squiz.WhiteSpace.FunctionSpacing spacingAfterLast 1
 
 class MyClass {
-
     function a(){}
-
     function b(){}
-
     function c(){}
-
 }
 
 $util->setLogger(new class {
-
     public function a(){}
-
     private function b(){}
-
     protected function c(){}
-
 });
 
 ?>
@@ -412,6 +375,8 @@ class MyClass
 
     protected $tag = '';
 
+
+
     /**
      * Function comment.
      *
@@ -423,6 +388,8 @@ class MyClass
 
 class MyClass
 {
+
+
 
     /**
      * Function comment.
@@ -436,21 +403,49 @@ class MyClass
 class MyClass
 {
     // Unrelated comment.
-
     /**
      * Function comment.
      *
      * @return boolean
      */
     function func1() {}
-
     // phpcs:disable Standard.Category.Sniff -- for reasons.
-
     /**
      * Function comment.
      *
      * @return boolean
      */
     function func2() {}
-
 }//end class
+
+// phpcs:set Squiz.WhiteSpace.FunctionSpacing spacing 2
+// phpcs:set Squiz.WhiteSpace.FunctionSpacing spacingBeforeFirst 2
+// phpcs:set Squiz.WhiteSpace.FunctionSpacing spacingAfterLast 2
+
+echo 'just some code to let the below line test blank lines before';
+echo 'something'; function testingFunctionNotOnOwnLine() {} echo 'somethingelse';
+echo 'just some code to let the above line test blank lines after';
+
+trait MyTrait {
+
+
+    public function a(){}
+
+
+
+
+    public function b(){}
+    public function c(){}
+}
+
+$anon_class = new class() {
+    public function a(){}
+
+    protected function b(){}
+
+
+
+
+    private function c(){}
+
+};

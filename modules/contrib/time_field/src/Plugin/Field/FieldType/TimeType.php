@@ -84,7 +84,7 @@ class TimeType extends FieldItemBase {
    */
   public function isEmpty() {
     $value = $this->get('value')->getValue();
-    return empty($value);
+    return trim($value) === '';
   }
 
 }

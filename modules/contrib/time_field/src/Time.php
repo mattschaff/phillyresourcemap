@@ -174,13 +174,24 @@ class Time {
   /**
    * Format for widget.
    *
+   * @param bool $show_seconds
+   *   (Optional) Whether to include the seconds in the output regardless
+   *     of the current time value. Defaults to TRUE.
+   *   This is to ensure the option to adjust seconds is not shown in the
+   *     widget when we don't want it to.
+   *
    * @return string
    *   Formatted time eg `23:12:00`
    */
-  public function formatForWidget() {
+  public function formatForWidget($show_seconds = TRUE) {
     $time = self::baseDateTime();
     $time->setTimestamp($time->getTimestamp() + $this->getTimestamp());
-    return $time->format('H:i:s');
+    // If we're showing seconds, include the seconds in the output.
+    if ($show_seconds) {
+      return $time->format('H:i:s');
+    }
+    // Otherwise, exclude the seconds in the output.
+    return $time->format('H:i');
   }
 
   /**

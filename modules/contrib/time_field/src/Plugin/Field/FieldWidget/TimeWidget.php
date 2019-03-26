@@ -56,18 +56,24 @@ class TimeWidget extends WidgetBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @see \Drupal\time_field\Element\TimeElement::preRenderTime()
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+    // Determine if we're showing seconds in the widget.
+    $show_seconds = (bool) $this->getSetting('enabled');
     $additional = [
       '#type' => 'time',
       '#default_value' => isset($items[$delta]->value) ? Time::createFromTimestamp(
         $items[$delta]->value
-      )
-        ->formatForWidget() : NULL,
+      )->formatForWidget($show_seconds) : NULL,
     ];
-    if ($this->getSetting('enabled')) {
+    // Add the step attribute if we're showing seconds in the widget.
+    if ($show_seconds) {
       $additional['#attributes']['step'] = $this->getSetting('step');
     }
+    // Set a property to determine the format in TimeElement::preRenderTime().
+    $additional['#show_seconds'] = $show_seconds;
     $element['value'] = $element + $additional;
     return $element;
   }

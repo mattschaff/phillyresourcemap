@@ -17,11 +17,12 @@
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/field_group": "^1.0",
         "drupal/devel": "^2.0",
-        "drupal/views_field_view": "^1.0@beta",
-        "drupal/mail_login": "^1.0",
         "drupal/tvi": "^1.0@beta",
         "drupal/twig_tweak": "^2.1",
-        "drupal/views_ajax_history": "^1.0"
+        "drupal/mail_login": "^1.0",
+        "drupal/views_field_view": "^1.0@beta",
+        "drupal/views_ajax_history": "^1.0",
+        "twig/twig": "1.37.1"
     },
     "replace": {
         "drupal/core": "^8.6"
@@ -59,7 +60,10 @@
         },
         "patches": {
             "drupal/contextual": {
-                "Contextual links destination uses internal paths, not path aliases": "https://www.drupal.org/files/issues/2639822-8.patch"     
+                "Contextual links destination uses internal paths, not path aliases": "https://www.drupal.org/files/issues/2639822-8.patch"
+            },
+            "drupal/views_ajax_history": {
+                "Unchecking checkboxes (BEF) do not remove values from URL": "https://www.drupal.org/files/issues/2018-11-28/remove_checkbox_values_when_unchecked_3007027-3.patch"
             }
         }
     },

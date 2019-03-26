@@ -30,6 +30,7 @@ class TimeElement extends FormElement {
   public function getInfo() {
     $class = get_class($this);
     return [
+      '#show_seconds' => false,
       '#input' => TRUE,
       '#process' => [
         [$class, 'processAjaxForm'],
@@ -46,6 +47,10 @@ class TimeElement extends FormElement {
    * {@inheritdoc}
    */
   public static function valueCallback(&$element, $input, FormStateInterface $form_state) {
+    if ($input === FALSE && !empty($element['#default_value'])) {
+      $input = $element['#default_value'];
+    }
+
     if (!empty($input)) {
       $time = Time::createFromHtml5Format($input);
       return $time->getTimestamp();
@@ -64,6 +69,8 @@ class TimeElement extends FormElement {
    *
    * @return array
    *   The $element with prepared variables ready for input.html.twig.
+   *
+   * @see \Drupal\time_field\Plugin\Field\FieldWidget\TimeWidget::formElement()
    */
   public static function preRenderTime(array $element) {
     $element['#attributes']['type'] = 'time';
@@ -74,7 +81,7 @@ class TimeElement extends FormElement {
     $isValuePassedInTimestampFormat = preg_match('/^\d+$/', $element['#value']);
     if ($isValuePassedInTimestampFormat) {
       $element['#value'] = Time::createFromTimestamp($element['#value'])
-        ->formatForWidget();
+        ->formatForWidget($element['#show_seconds']);
     }
 
     Element::setAttributes($element, [
