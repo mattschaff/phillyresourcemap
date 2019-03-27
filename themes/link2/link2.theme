@@ -16,7 +16,7 @@ function link2_preprocess_views_view(&$vars){
 	// only use unique location NIDs for service view
 
 	if ($vars['view']->id() === 'service_view') {
-		$rows = $vars['rows'][0]['#rows'];
+		$rows = $vars['rows']['output'][0]['#rows'];
 		$new_rows = [];
 		$used_location_nids = [];
 	//	echo count($vars['rows']);
@@ -30,7 +30,7 @@ function link2_preprocess_views_view(&$vars){
 				$new_rows[] = $row;
 			}
 		}
-		$vars['rows'][0]['#rows'] = $new_rows;
+		$vars['rows']['output'][0]['#rows'] = $new_rows;
 	}
 	// only use unique service TIDs for service view on location page
 	if ($vars['view']->id() === 'service' && $vars['display_id'] === 'block_2') {
