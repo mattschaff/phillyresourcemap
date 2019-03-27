@@ -4776,59 +4776,6 @@
         }
     },
     {
-        "name": "drupal/geolocation",
-        "version": "1.11.0",
-        "version_normalized": "1.11.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupal.org/project/geolocation",
-            "reference": "8.x-1.11"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-1.11.zip",
-            "reference": "8.x-1.11",
-            "shasum": "a401d5c576a8c4886e84272f2ca2a3c524c46869"
-        },
-        "require": {
-            "drupal/core": "*"
-        },
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-1.x": "1.x-dev"
-            },
-            "drupal": {
-                "version": "8.x-1.11",
-                "datestamp": "1505687043",
-                "security-coverage": {
-                    "status": "covered",
-                    "message": "Covered by Drupal's security advisory policy"
-                }
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packages.drupal.org/8/downloads",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "ChristianAdamski",
-                "homepage": "https://www.drupal.org/user/867880"
-            },
-            {
-                "name": "derjochenmeyer",
-                "homepage": "https://www.drupal.org/user/106134"
-            }
-        ],
-        "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
-        "homepage": "https://www.drupal.org/project/geolocation",
-        "support": {
-            "source": "http://cgit.drupalcode.org/geolocation"
-        }
-    },
-    {
         "name": "drupal/entity_reference_revisions",
         "version": "1.6.0",
         "version_normalized": "1.6.0.0",
@@ -6500,6 +6447,62 @@
         "homepage": "https://www.drupal.org/project/views_ajax_history",
         "support": {
             "source": "http://cgit.drupalcode.org/views_ajax_history"
+        }
+    },
+    {
+        "name": "drupal/geolocation",
+        "version": "1.11.0",
+        "version_normalized": "1.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/geolocation",
+            "reference": "8.x-1.11"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-1.11.zip",
+            "reference": "8.x-1.11",
+            "shasum": "a401d5c576a8c4886e84272f2ca2a3c524c46869"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.11",
+                "datestamp": "1505687043",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "patches_applied": {
+                "Proximity Field - Use HTML5 Geolocation as source": "https://www.drupal.org/files/issues/2018-06-15/2879171-36-geolocation-html5-proximity.patch"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "ChristianAdamski",
+                "homepage": "https://www.drupal.org/user/867880"
+            },
+            {
+                "name": "derjochenmeyer",
+                "homepage": "https://www.drupal.org/user/106134"
+            }
+        ],
+        "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
+        "homepage": "https://www.drupal.org/project/geolocation",
+        "support": {
+            "source": "http://cgit.drupalcode.org/geolocation"
         }
     }
 ]

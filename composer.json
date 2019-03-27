@@ -65,6 +65,9 @@
             },
             "drupal/views_ajax_history": {
                 "Unchecking checkboxes (BEF) do not remove values from URL": "https://www.drupal.org/files/issues/2018-11-28/remove_checkbox_values_when_unchecked_3007027-3.patch"
+            },
+            "drupal/geolocation": {
+                "Proximity Field - Use HTML5 Geolocation as source": "https://www.drupal.org/files/issues/2018-06-15/2879171-36-geolocation-html5-proximity.patch"
             }
         }
     },

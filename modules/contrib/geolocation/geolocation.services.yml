@@ -11,3 +11,6 @@ services:
   plugin.manager.geolocation.geocoder:
     class: Drupal\geolocation\GeocoderManager
     parent: default_plugin_manager
+
+  geolocation.temp_store:
+    class: Drupal\geolocation\GeolocationTempStore

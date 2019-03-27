@@ -496,6 +496,10 @@
             markerClustererStyles = commonMapSettings.markerClusterer.styles;
           }
 
+          if (geolocationMap.markerClusterer) {
+            geolocationMap.markerClusterer.clearMarkers();
+          }
+
           geolocationMap.markerClusterer = new MarkerClusterer(
             geolocationMap.googleMap,
             geolocationMap.mapMarkers,

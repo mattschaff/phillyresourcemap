@@ -3,6 +3,8 @@
 namespace Drupal\geolocation\Plugin\views\field;
 
 use Drupal\geolocation\GeolocationCore;
+use Drupal\geolocation\GeolocationTempStore;
+use Drupal\views\Plugin\views\exposed_form\InputRequired;
 use Drupal\views\ResultRow;
 use Drupal\views\Plugin\views\field\NumericField;
 use Drupal\Core\Render\Element;
@@ -11,7 +13,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Field handler for geolocaiton field.
+ * Field handler for geolocation field.
  *
  * @ingroup views_field_handlers
  *
@@ -27,6 +29,11 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
   protected $geolocationCore;
 
   /**
+   * @var \Drupal\geolocation\GeolocationTempStore
+   */
+  protected $tempStore;
+
+  /**
    * Constructs a Handler object.
    *
    * @param array $configuration
@@ -37,11 +44,14 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
    *   The plugin implementation definition.
    * @param \Drupal\geolocation\GeolocationCore $geolocation_core
    *   The GeolocationCore object.
+   * @param \Drupal\geolocation\GeolocationTempStore $temp_store
+   *   The geolocation private tempstore.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, GeolocationCore $geolocation_core) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, GeolocationCore $geolocation_core, GeolocationTempStore $temp_store) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->geolocationCore = $geolocation_core;
+    $this->tempStore = $temp_store;
   }
 
   /**
@@ -55,7 +65,8 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $geolocation_core
+      $geolocation_core,
+      $container->get('geolocation.temp_store')
     );
   }
 
@@ -102,6 +113,7 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
       '#options' => [
         'direct_input' => $this->t('Static Values'),
         'user_input' => $this->t('User input'),
+        'client_location' => $this->t('Client location (HTML5)'),
       ],
     ];
 
@@ -154,6 +166,8 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
             ['select[name="options[proximity_source]"]' => ['value' => 'entity_id_argument']],
             'or',
             ['select[name="options[proximity_source]"]' => ['value' => 'user_input']],
+            'or',
+            ['select[name="options[proximity_source]"]' => ['value' => 'client_location']],
           ],
         ],
       ],
@@ -378,6 +392,13 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
         $units = $this->options['proximity_units'];
         break;
 
+      case 'client_location':
+        $geolocation = $this->tempStore->getClientLocation();
+        $latitude = !empty($geolocation['lat']) ? $geolocation['lat'] : '';
+        $longitude = !empty($geolocation['lng']) ? $geolocation['lng'] : '';
+        $units = $this->options['proximity_units'];
+        break;
+
       case 'filter':
         /** @var \Drupal\geolocation\Plugin\views\filter\ProximityFilter $filter */
         $filter = $this->view->filter[$this->options['proximity_filter']];
@@ -473,29 +494,35 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
    *   The current state of the form.
    */
   public function viewsForm(array &$form, FormStateInterface $form_state) {
-    if ($this->options['proximity_source'] != 'user_input') {
+    if (!in_array($this->options['proximity_source'], ['user_input', 'client_location'])) {
       unset($form['actions']);
       return;
     }
+
+    $proximity_source = $this->options['proximity_source'];
+
     $form['#cache']['max-age'] = 0;
 
     $form['#method'] = 'GET';
 
     $form['#attributes']['class'][] = 'geolocation-views-proximity-field';
 
+    $proximity_lat = $this->view->getRequest()->get('proximity_lat', '');
     $form['proximity_lat'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Latitude'),
       '#empty_value' => '',
-      '#default_value' => $this->view->getRequest()->get('proximity_lat', ''),
+      '#default_value' => $proximity_lat,
       '#maxlength' => 255,
       '#weight' => -1,
     ];
+
+    $proximity_lng = $this->view->getRequest()->get('proximity_lng', '');
     $form['proximity_lng'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Longitude'),
       '#empty_value' => '',
-      '#default_value' => $this->view->getRequest()->get('proximity_lng', ''),
+      '#default_value' => $proximity_lng,
       '#maxlength' => 255,
       '#weight' => -1,
     ];
@@ -503,6 +530,7 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
     if (
       $this->options['proximity_geocoder']
       && !empty($this->options['proximity_geocoder_plugin_settings'])
+      && $proximity_source !== 'client_location'
     ) {
       $geocoder_configuration = $this->options['proximity_geocoder_plugin_settings']['settings'];
       $geocoder_configuration['label'] = $this->t('Address');
@@ -532,6 +560,64 @@ class ProximityField extends NumericField implements ContainerFactoryPluginInter
     }
 
     $form['actions']['submit']['#value'] = $this->t('Calculate proximity');
+
+    // Add functionality for retrieving location from client
+    // using HTML5 geolocation API.
+    if ($proximity_source === 'client_location') {
+      // Determine if we already have coordinate data, either retrieved from the
+      // current request or stored in a cookie.
+      $has_coordinates = ((!empty($proximity_lat) && !empty($proximity_lng)) ||
+        (!empty($this->tempStore->getClientLocation())));
+
+      // If AJAX is not enabled on this view, then enable it and run
+      // Views pre-render code to generate the AJAX settings for the
+      // view. These AJAX settings are used by the HTML5 geolocation
+      // code to auto-update the view after the HTML5 client location
+      // is retrieved.
+      if (!$this->view->ajaxEnabled() && !$has_coordinates) {
+        $this->view->setAjaxEnabled(TRUE);
+        views_views_pre_render($this->view);
+      }
+
+      // By default, the view will auto-refresh using AJAX once HTML5
+      // coordinates are received.
+      $auto_refresh = true;
+
+      // Determine if this view requires exposed form input and if any
+      // exposed input exists. If the exposed form requires input and
+      // none exists, then the view will not be auto-refreshed via
+      // AJAX.
+      $exposed_form_plugin = $this->view->display_handler->getPlugin('exposed_form');
+      if ($exposed_form_plugin instanceof InputRequired) {
+        $auto_refresh = (!empty($this->view->getExposedInput()));
+      }
+
+      // Add assets and drupalSettings for HTML5 geolocation.
+      $form = array_merge_recursive($form, [
+        '#attached' => [
+          'library' => [
+            'geolocation/geolocation.proximity.html5',
+          ],
+          'drupalSettings' => [
+            'geolocation' => [
+              'html5' => [
+                'has_coordinates' => $has_coordinates,
+                'proximity_view_ids' => [$this->view->dom_id],
+                $this->view->dom_id => [
+                  'auto_refresh' => $auto_refresh,
+                ],
+              ],
+            ],
+          ],
+        ],
+      ]);
+
+      // Remove the form inputs, as the view will be dynamically
+      // refreshed if HTML5 geolocation succeeds.
+      unset($form['proximity_lat']);
+      unset($form['proximity_lng']);
+      unset($form['actions']);
+    }
 
     // #weight will be stripped from 'output' in preRender callback.
     // Offset negatively to compensate.

@@ -15,7 +15,7 @@
    * @prop {Drupal~behaviorAttach} attach
    *   Attaches html5 widget functionality to relevant elements.
    */
-  Drupal.behaviors.geolocationHTML5 = {
+  Drupal.behaviors.geolocationWidgetHTML5 = {
     attach: function (context, settings) {
       $('.geolocation-html5-button:not(.disabled)').each(function (index) {
         // The parent element.

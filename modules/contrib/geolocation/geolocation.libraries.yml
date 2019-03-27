@@ -22,6 +22,12 @@ geolocation.views.filter.geocoder:
   dependencies:
     - geolocation/geolocation.geocoder
 
+# HTML5 Geolocation API.
+geolocation.html5:
+  version: 1.x
+  js:
+    js/geolocation-html5.js: { scope: footer }
+
 # HTML5 widget library.
 geolocation.widgets.html5:
   version: 1.x
@@ -30,6 +36,17 @@ geolocation.widgets.html5:
       css/geolocation-widget-html5.css: {}
   js:
     js/geolocation-widget-html5.js: { scope: footer }
+
+# HTML5 proximity field.
+geolocation.proximity.html5:
+  version: 1.x
+  js:
+    js/geolocation-proximity-html5.js: { scope: footer }
+  dependencies:
+    - core/drupal.ajax
+    - views/views.ajax
+    - geolocation/geolocation.googlemapsapi
+    - geolocation/geolocation.html5
 
 #
 #

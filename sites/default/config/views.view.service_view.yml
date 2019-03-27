@@ -8,6 +8,7 @@ dependencies:
     - taxonomy.vocabulary.service_type
   module:
     - better_exposed_filters
+    - geolocation
     - node
     - options
     - taxonomy
@@ -107,31 +108,33 @@ display:
             previous: ‹‹
             next: ››
       sorts:
-        sticky:
-          id: sticky
-          table: taxonomy_index
-          field: sticky
-          order: DESC
+        field_location_geolocation_proximity:
+          proximity_field: field_location_geolocation_proximity
+          id: field_location_geolocation_proximity
+          table: node__field_location_geolocation
+          field: field_location_geolocation_proximity
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: geolocation_sort_proximity
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: standard
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-        created:
-          id: created
-          table: taxonomy_index
-          field: created
-          order: DESC
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
       arguments:
         tid:
           id: tid
@@ -585,6 +588,81 @@ display:
           empty_zero: false
           hide_alter_empty: true
           plugin_id: standard
+        field_location_geolocation_proximity:
+          proximity_source: client_location
+          proximity_lat: ''
+          proximity_lng: ''
+          proximity_units: mile
+          proximity_filter: ''
+          proximity_argument: ''
+          entity_id_argument: tid
+          boundary_filter: ''
+          proximity_geocoder: 0
+          proximity_geocoder_plugin_settings:
+            plugin_id: google_geocoding_api
+            settings:
+              components:
+                route: ''
+                locality: ''
+                administrativeArea: ''
+                postalCode: ''
+                country: ''
+          id: field_location_geolocation_proximity
+          table: node__field_location_geolocation
+          field: field_location_geolocation_proximity
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '( <strong>{{ field_location_geolocation_proximity }} </strong>)'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: true
+          precision: 1
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ' miles'
+          plugin_id: geolocation_field_proximity
         title_1:
           id: title_1
           table: node_field_data
@@ -596,7 +674,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class =\"panel-body\">\r\n<span class=\"location-name \">{{ title_1__value }}</span>\r\n<span class=\"location-address\">{{ field_location_address_address_line1 }}</span> \r\n</div>"
+            text: "<div class =\"panel-body\">\r\n<div class=\"location-name col-md-7\">{{ title_1__value }}</div>\r\n<div class=\"col-md-2\">{{ field_location_geolocation_proximity }}</div>\r\n<div class=\"location-address col-md-3\"> {{ field_location_address_address_line1 }}</div> \r\n</div>"
             make_link: true
             path: '{{ nothing }}?svtid={{ raw_arguments.tid }}'
             absolute: false

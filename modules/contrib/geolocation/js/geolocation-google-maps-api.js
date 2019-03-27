@@ -434,7 +434,6 @@
    */
   Drupal.geolocation.removeMapMarker = function (map) {
     map.mapMarkers = map.mapMarkers || [];
-
     $.each(
       map.mapMarkers,
 

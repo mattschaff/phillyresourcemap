@@ -12,13 +12,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  /**
 	* Implements hook_preprocess_views_view
 	*/
+	echo 'whatwhat'; die();
 function link_preprocess_views_view(&$vars){
+	echo 'test'; die();
 	// only use unique location NIDs for service view
 	if ($vars['view']->id() === 'service_view') {
 		$rows = $vars['rows'][0]['#rows'];
 		$new_rows = [];
 		$used_location_nids = [];
 		foreach ($rows as $row){
+			var_dump(get_object_vars($row)); die();
 			$location_nid = $row->node_field_data_node__field_associated_location_nid;
 			if (!in_array($location_nid, $used_location_nids)) {
 				$used_location_nids[] = $location_nid;

@@ -14,11 +14,16 @@ use Drupal\taxonomy\Entity\Term;
 	*/
 function link2_preprocess_views_view(&$vars){
 	// only use unique location NIDs for service view
+
 	if ($vars['view']->id() === 'service_view') {
 		$rows = $vars['rows'][0]['#rows'];
 		$new_rows = [];
 		$used_location_nids = [];
+	//	echo count($vars['rows']);
 		foreach ($rows as $row){
+			//echo $row['#row']->node_field_data_node__field_associated_location_nid;
+			//kint($vars);
+			//var_dump(array_keys($vars['rows']['output']));die();
 			$location_nid = $row['#row']->node_field_data_node__field_associated_location_nid;
 			if (!in_array($location_nid, $used_location_nids)) {
 				$used_location_nids[] = $location_nid;

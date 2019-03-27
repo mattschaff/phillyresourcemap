@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e48125a6c9bac14a3e6becba3cbe52f5",
+    "content-hash": "140dbb51ce3531faeb79c70343116816",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1385,6 +1385,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Proximity Field - Use HTML5 Geolocation as source": "https://www.drupal.org/files/issues/2018-06-15/2879171-36-geolocation-html5-proximity.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
