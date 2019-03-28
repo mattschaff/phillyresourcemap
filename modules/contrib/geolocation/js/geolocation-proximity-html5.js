@@ -1,6 +1,5 @@
 (function ($, Drupal, drupalSettings) {
   'use strict';
-  console.log('woof1');
   /**
    * @namespace
    */
@@ -22,7 +21,6 @@
     // request.
     geolocationAjaxSettings.submit['proximity_lat'] = coordinates.latitude;
     geolocationAjaxSettings.submit['proximity_lng'] = coordinates.longitude;
-    console.log(geolocationAjaxSettings);
     // Use AJAX to refresh the view.
     $('.js-view-dom-id-' + mapId, context).trigger('RefreshView');
   };
