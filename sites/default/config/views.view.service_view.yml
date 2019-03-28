@@ -617,7 +617,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '( <strong>{{ field_location_geolocation_proximity }} </strong>)'
+            text: '<strong>{{ field_location_geolocation_proximity }} </strong>'
             make_link: false
             path: ''
             absolute: false
@@ -652,10 +652,10 @@ display:
           element_default_classes: true
           empty: ''
           hide_empty: false
-          empty_zero: false
+          empty_zero: true
           hide_alter_empty: true
           set_precision: true
-          precision: 1
+          precision: 2
           decimal: .
           separator: ','
           format_plural: false
@@ -674,7 +674,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class =\"panel-body\">\r\n<div class=\"location-name col-md-7\">{{ title_1__value }}</div>\r\n<div class=\"col-md-2\">{{ field_location_geolocation_proximity }}</div>\r\n<div class=\"location-address col-md-3\"> {{ field_location_address_address_line1 }}</div> \r\n</div>"
+            text: "<div class =\"panel-body\">\r\n<div class=\"location-name col-xs-7\">{{ title_1__value }}</div>\r\n<div class=\"location-address col-xs-3\"> {{ field_location_address_address_line1 }}</div>\r\n<div class=\"col-xs-2\">{{ field_location_geolocation_proximity }}</div>\r\n</div>"
             make_link: true
             path: '{{ nothing }}?svtid={{ raw_arguments.tid }}'
             absolute: false
