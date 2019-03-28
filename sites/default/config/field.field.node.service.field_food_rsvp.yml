@@ -13,9 +13,7 @@ label: 'Can Request in Advance'
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
 settings:
   on_label: 'Can Request in Advance'

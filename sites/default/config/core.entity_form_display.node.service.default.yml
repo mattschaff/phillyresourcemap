@@ -129,27 +129,27 @@ content:
     region: content
   field_can_cancel_advance_request:
     weight: 25
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings:
       conditional_fields:
         52356ad6-5e5e-4bd9-a338-b0655eec87d2:
           dependee: field_food_rsvp
           settings:
             state: visible
-            condition: checked
+            condition: value
             grouping: AND
             values_set: 1
             value: ''
             values: {  }
             value_form:
-              value: false
+              -
+                value: '1'
             effect: show
             effect_options: {  }
             selector: ''
           entity_type: node
           bundle: service
-    type: boolean_checkbox
+    type: options_buttons
     region: content
   field_classes:
     type: entity_reference_paragraphs
@@ -183,8 +183,7 @@ content:
     region: content
   field_food_rsvp:
     weight: 24
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings:
       conditional_fields:
         967df223-eec4-44f9-8353-50115a096cd5:
@@ -204,7 +203,7 @@ content:
             selector: ''
           entity_type: node
           bundle: service
-    type: boolean_checkbox
+    type: options_buttons
     region: content
   field_housing_type:
     weight: 26
