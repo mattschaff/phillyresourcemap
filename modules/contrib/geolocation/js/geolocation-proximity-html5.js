@@ -30,7 +30,6 @@
   Drupal.behaviors.geolocationProximityHTML5 = {
     attach: function(context) {
       Drupal.matt_context = context;
-      console.log(context);
       if (!drupalSettings.geolocation.html5.proximity_view_ids.length ||
         drupalSettings.geolocation.html5.permissionDenied ||
         drupalSettings.geolocation.html5.has_coordinates) {
@@ -58,10 +57,9 @@
           //Drupal.matt_dom_id = dom_id;
           // If specified, auto refresh the view with the received
           // HTML5 coordinates.
-          drupalSettings.geolocation.html5[dom_id].auto_refresh = false;
+          drupalSettings.geolocation.html5[dom_id].auto_refresh = true;
           if (drupalSettings.geolocation.html5[dom_id] &&
             drupalSettings.geolocation.html5[dom_id].auto_refresh) {
-              console.log('ugh');
             Drupal.geolocation.proximityHTML5[dom_id].receivedCoordinates.resolve(position);
             Drupal.geolocation.proximityHTML5[dom_id].position = position;
           }
@@ -75,7 +73,6 @@
           Drupal.geolocation.proximityHTML5[dom_id].mapLoaded,
           Drupal.geolocation.proximityHTML5[dom_id].receivedCoordinates
         ).then(function(map, position) {
-          console.log('test test test');
           Drupal.geolocation.proximityHTML5.refreshView(dom_id, position.coords, context);
         });
       });
