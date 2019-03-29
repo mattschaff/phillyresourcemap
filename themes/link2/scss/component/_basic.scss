@@ -27,3 +27,22 @@ ul.nav-tabs {
 .js-form-type-vertical-tabs {
   display: none;
 }
+
+@media all and (min-width: 1024px) { /* 768px */
+  .ui-dialog {
+    width: 800px !important;
+    max-width: 800px !important;
+  }
+  #drupal-modal--dialog {
+    left: -80px;
+  }
+}
+
+.paragraphs-dropdown-action.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.modal-body {
+  background: #f7f7f7;
+}

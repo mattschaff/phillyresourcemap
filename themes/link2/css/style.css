@@ -2273,6 +2273,10 @@ table .checkbox.form-no-label, table .radio.form-no-label { margin-bottom: 0; ma
 .form-actions .btn, .form-actions .btn-group { margin-right: 10px; }
 .form-actions .btn-group .btn { margin-right: 0; }
 
+.node-service-edit-form .paragraph-type--schedule-day .ajax-new-content { padding-right: 20px; }
+
+.node-service-form .paragraph-type--schedule-day [data-drupal-selector="edit-field-schedule-0"] { padding-right: 20px; }
+
 /** Icon styles. */
 a.icon-before .glyphicon, a .glyphicon.icon-before { margin-right: .25em; }
 a.icon-after .glyphicon, a .glyphicon.icon-after { margin-left: .25em; }
@@ -2680,6 +2684,13 @@ ul.nav-tabs { margin-bottom: 20px; }
 .role-organization article .contextual { display: block; }
 
 .js-form-type-vertical-tabs { display: none; }
+
+@media all and (min-width: 1024px) { /* 768px */
+  .ui-dialog { width: 800px !important; max-width: 800px !important; }
+  #drupal-modal--dialog { left: -80px; } }
+.paragraphs-dropdown-action.btn-danger { background-color: #d9534f; border-color: #d43f3a; }
+
+.modal-body { background: #f7f7f7; }
 
 /** jQuery UI autocomplete widget style overrides.  $todo Remove once jQuery UI is no longer used? */
 .ui-autocomplete { background: #fff; background-clip: padding-box; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); color: inherit; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; list-style: none; min-width: 160px; padding: 5px 0; text-align: left; z-index: 1000; }

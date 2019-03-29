@@ -141,3 +141,11 @@ function link2_theme_suggestions_page_alter(array &$suggestions, array $variable
     $suggestions[] = 'page__node__' . $node->bundle();
   }
 }
+
+/**
+* Implements hook_preprocess_page
+*/
+function link2_preprocess_page(&$vars) {
+	$vars['libraries'][] = 'core/drupal.dialog.ajax';
+	$vars['libraries'][] = 'core/jquery.form';
+}

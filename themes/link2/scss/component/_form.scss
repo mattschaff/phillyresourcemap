@@ -110,3 +110,13 @@
     }
   }
 }
+.node-service-edit-form {
+  .paragraph-type--schedule-day .ajax-new-content {
+    padding-right: 20px;
+  }
+}
+.node-service-form  {
+  .paragraph-type--schedule-day [data-drupal-selector="edit-field-schedule-0"] {
+    padding-right: 20px;
+  }
+}

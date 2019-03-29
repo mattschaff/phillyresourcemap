@@ -425,6 +425,51 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: boolean
+        status_2:
+          id: status_2
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+        status_3:
+          id: status_3
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
       style:
         type: default
         options:
@@ -856,31 +901,8 @@ display:
       display_extenders: {  }
       display_description: ''
       defaults:
-        filters: true
-        filter_groups: true
-    cache_metadata:
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      max-age: -1
-      tags: {  }
-  page_3:
-    id: page_3
-    display_title: Housing
-    display_plugin: page
-    position: 2
-    display_options:
-      query:
-        type: views_query
-        options: {  }
-      path: taxonomy/term/%
-      display_extenders: {  }
-      display_description: ''
+        filters: false
+        filter_groups: false
       filters:
         langcode:
           id: langcode
@@ -958,48 +980,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
-        field_housing_type_value:
-          id: field_housing_type_value
-          table: node__field_housing_type
-          field: field_housing_type_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_housing_type_value_op
-            label: Type
-            description: ''
-            use_operator: false
-            operator: field_housing_type_value_op
-            identifier: field_housing_type_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              organization: '0'
-              prm_administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
         field_service_gender_target_id:
           id: field_service_gender_target_id
           table: node__field_service_gender
@@ -1132,9 +1112,321 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
+        status_1:
+          id: status_1
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  page_3:
+    id: page_3
+    display_title: Housing
+    display_plugin: page
+    position: 2
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      path: taxonomy/term/%
+      display_extenders: {  }
+      display_description: ''
       defaults:
         filters: false
         filter_groups: false
+      filters:
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: language
+          entity_type: node
+          entity_field: langcode
+        status:
+          id: status
+          table: taxonomy_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_service_gender_target_id:
+          id: field_service_gender_target_id
+          table: node__field_service_gender
+          field: field_service_gender_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_service_gender_target_id_op
+            label: Gender
+            description: ''
+            use_operator: false
+            operator: field_service_gender_target_id_op
+            identifier: field_service_gender_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              organization: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gender_eligibility
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_age_elibility_target_id:
+          id: field_age_elibility_target_id
+          table: node__field_age_elibility
+          field: field_age_elibility_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_age_elibility_target_id_op
+            label: Age
+            description: ''
+            use_operator: false
+            operator: field_age_elibility_target_id_op
+            identifier: field_age_elibility_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              organization: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: age_eligibility
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_available_value:
+          id: field_available_value
+          table: node__field_available
+          field: field_available_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Available
+            description: ''
+            use_operator: false
+            operator: field_available_value_op
+            identifier: field_available_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              organization: '0'
+              prm_administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        status_1:
+          id: status_1
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
@@ -1162,6 +1454,9 @@ display:
       path: taxonomy/term/%
       display_extenders: {  }
       display_description: ''
+      defaults:
+        filters: false
+        filter_groups: false
       filters:
         langcode:
           id: langcode
@@ -1371,9 +1666,44 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
-      defaults:
-        filters: false
-        filter_groups: false
+        status_1:
+          id: status_1
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
@@ -1401,6 +1731,9 @@ display:
       path: taxonomy/term/%
       display_extenders: {  }
       display_description: ''
+      defaults:
+        filters: false
+        filter_groups: false
       filters:
         langcode:
           id: langcode
@@ -1478,48 +1811,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
-        field_medical_resource_type_value:
-          id: field_medical_resource_type_value
-          table: node__field_medical_resource_type
-          field: field_medical_resource_type_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_medical_resource_type_value_op
-            label: Type
-            description: ''
-            use_operator: false
-            operator: field_medical_resource_type_value_op
-            identifier: field_medical_resource_type_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              organization: '0'
-              prm_administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
         field_service_gender_target_id:
           id: field_service_gender_target_id
           table: node__field_service_gender
@@ -1652,9 +1943,44 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
-      defaults:
-        filters: false
-        filter_groups: false
+        status_1:
+          id: status_1
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
@@ -1840,6 +2166,44 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          plugin_id: boolean
+        status_1:
+          id: status_1
+          table: node_field_data
+          field: status
+          relationship: field_associated_location
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
           plugin_id: boolean
       defaults:
         filters: false
