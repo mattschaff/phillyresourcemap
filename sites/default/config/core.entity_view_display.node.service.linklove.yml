@@ -194,4 +194,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_age_restrictions: true
   field_associated_location: true
+  field_gender_restrictions: true
