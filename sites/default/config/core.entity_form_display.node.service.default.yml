@@ -38,7 +38,7 @@ third_party_settings:
         - field_tech_resources
         - field_classes
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: fieldset
       format_settings:
         label: 'Category-Specific Fields'
@@ -52,9 +52,7 @@ third_party_settings:
         - title
         - field_available
         - field_associated_location
-        - field_age_elibility
-        - field_service_gender
-      parent_name: ''
+      parent_name: group_test
       weight: 0
       format_type: fieldset
       format_settings:
@@ -69,7 +67,7 @@ third_party_settings:
         - field_service_description
         - field_application_process
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: fieldset
       format_settings:
         id: ''
@@ -81,7 +79,7 @@ third_party_settings:
       children:
         - field_schedule
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: fieldset
       format_settings:
         id: ''
@@ -89,6 +87,32 @@ third_party_settings:
         description: ''
         required_fields: true
       label: ''
+    group_eligibility:
+      children:
+        - field_age_elibility
+        - field_service_gender
+      parent_name: group_test
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Eligibility
+    group_test:
+      children:
+        - group_basic_deta
+        - group_eligibility
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Test
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -96,12 +120,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_age_elibility:
-    weight: 4
+    weight: 9
     settings: {  }
     third_party_settings:
       conditional_fields: {  }
@@ -116,13 +140,13 @@ content:
     type: text_textarea
     region: content
   field_associated_location:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_available:
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -313,7 +337,7 @@ content:
     type: text_textarea
     region: content
   field_service_gender:
-    weight: 5
+    weight: 10
     settings: {  }
     third_party_settings:
       conditional_fields: {  }
@@ -345,7 +369,7 @@ content:
     region: content
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -353,26 +377,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 3
     region: content
     settings:
       size: 60
@@ -380,7 +404,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
