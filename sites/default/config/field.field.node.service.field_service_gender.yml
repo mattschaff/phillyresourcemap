@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_service_gender
     - node.type.service
     - taxonomy.vocabulary.gender_eligibility
+  content:
+    - 'taxonomy_term:gender_eligibility:2c555bad-7ac1-447b-ad7f-cb6448a4d02f'
+    - 'taxonomy_term:gender_eligibility:2e44abd1-7d60-4d37-a2a9-9ef7a489efe3'
+    - 'taxonomy_term:gender_eligibility:81a82b73-3b28-462c-a616-b1d6e83b2078'
+    - 'taxonomy_term:gender_eligibility:882fba7f-15c3-4302-b19b-15801ec06ece'
+    - 'taxonomy_term:gender_eligibility:bcbde765-25ef-4d32-8a7b-d8aaa26b5f08'
 id: node.service.field_service_gender
 field_name: field_service_gender
 entity_type: node
@@ -14,7 +20,17 @@ label: 'Gender Eligibility'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 882fba7f-15c3-4302-b19b-15801ec06ece
+  -
+    target_uuid: 2c555bad-7ac1-447b-ad7f-cb6448a4d02f
+  -
+    target_uuid: 2e44abd1-7d60-4d37-a2a9-9ef7a489efe3
+  -
+    target_uuid: bcbde765-25ef-4d32-8a7b-d8aaa26b5f08
+  -
+    target_uuid: 81a82b73-3b28-462c-a616-b1d6e83b2078
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

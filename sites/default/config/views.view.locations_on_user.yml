@@ -411,7 +411,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<h4 class="no-results">No Locations created yet.<h4>'
+            value: "<h4 class=\"no-results\">No Locations created yet.<h4>\r\n<div class=\"row add-location-container\"><a class=\"btn btn-primary trigger use-ajax\" href=\"/node/add/location?destination=/user\" title=\"Edit\" data-dialog-type=\"modal\">Add Location</a></div>"
             format: full_html
           plugin_id: text
       relationships: {  }

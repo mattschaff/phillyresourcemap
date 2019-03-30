@@ -6,6 +6,11 @@ dependencies:
     - field.storage.node.field_age_elibility
     - node.type.service
     - taxonomy.vocabulary.age_eligibility
+  content:
+    - 'taxonomy_term:age_eligibility:791682aa-d08e-4a45-a97d-18d12565fd4e'
+    - 'taxonomy_term:age_eligibility:89f96fbe-d2ff-4e86-a8b7-869540990ed1'
+    - 'taxonomy_term:age_eligibility:9430fa86-205b-4814-b91c-2d4527fac38c'
+    - 'taxonomy_term:age_eligibility:f59a8ba9-de4b-49b8-8388-ee54a3d4e398'
 id: node.service.field_age_elibility
 field_name: field_age_elibility
 entity_type: node
@@ -14,7 +19,15 @@ label: 'Age Elibility'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 89f96fbe-d2ff-4e86-a8b7-869540990ed1
+  -
+    target_uuid: 9430fa86-205b-4814-b91c-2d4527fac38c
+  -
+    target_uuid: 791682aa-d08e-4a45-a97d-18d12565fd4e
+  -
+    target_uuid: f59a8ba9-de4b-49b8-8388-ee54a3d4e398
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

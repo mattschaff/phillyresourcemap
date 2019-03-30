@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.service.field_age_elibility
+    - field.field.node.service.field_age_restrictions
     - field.field.node.service.field_application_process
     - field.field.node.service.field_associated_location
     - field.field.node.service.field_available
     - field.field.node.service.field_can_cancel_advance_request
     - field.field.node.service.field_classes
     - field.field.node.service.field_food_rsvp
+    - field.field.node.service.field_gender_restrictions
     - field.field.node.service.field_housing_type
     - field.field.node.service.field_medical_resource_type
     - field.field.node.service.field_oral_products
@@ -80,6 +82,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_age_restrictions:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_application_process:
     weight: 7
     label: above
@@ -123,6 +135,16 @@ content:
       format: default
       format_custom_true: ''
       format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_gender_restrictions:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
     type: boolean
     region: content

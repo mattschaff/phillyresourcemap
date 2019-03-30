@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.service.field_age_elibility
+    - field.field.node.service.field_age_restrictions
     - field.field.node.service.field_application_process
     - field.field.node.service.field_associated_location
     - field.field.node.service.field_available
     - field.field.node.service.field_can_cancel_advance_request
     - field.field.node.service.field_classes
     - field.field.node.service.field_food_rsvp
+    - field.field.node.service.field_gender_restrictions
     - field.field.node.service.field_housing_type
     - field.field.node.service.field_medical_resource_type
     - field.field.node.service.field_oral_products
@@ -52,8 +54,8 @@ third_party_settings:
         - title
         - field_available
         - field_associated_location
-        - field_service_gender
-        - field_age_elibility
+        - group_gender_resctri
+        - group_age_rstri
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -89,6 +91,32 @@ third_party_settings:
         description: ''
         required_fields: true
       label: ''
+    group_gender_resctri:
+      children:
+        - field_gender_restrictions
+        - field_service_gender
+      parent_name: group_basic_deta
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Gender Restrictions'
+    group_age_rstri:
+      children:
+        - field_age_restrictions
+        - field_age_elibility
+      parent_name: group_basic_deta
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Age Restrictions'
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -101,10 +129,33 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_age_elibility:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings:
-      conditional_fields: {  }
+      conditional_fields:
+        36852cf4-ad5e-434d-be89-220192d037cf:
+          dependee: field_age_restrictions
+          settings:
+            state: '!visible'
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '0'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: service
+    type: options_buttons
+    region: content
+  field_age_restrictions:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
     type: options_buttons
     region: content
   field_application_process:
@@ -203,6 +254,12 @@ content:
             selector: ''
           entity_type: node
           bundle: service
+    type: options_buttons
+    region: content
+  field_gender_restrictions:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
     type: options_buttons
     region: content
   field_housing_type:
@@ -313,10 +370,28 @@ content:
     type: text_textarea
     region: content
   field_service_gender:
-    weight: 5
+    weight: 32
     settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    third_party_settings:
+      conditional_fields:
+        79f7ec84-e8e8-4f28-a534-779704f37861:
+          dependee: field_gender_restrictions
+          settings:
+            state: '!visible'
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '0'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: service
+    type: options_buttons
     region: content
   field_tech_resources:
     weight: 29
