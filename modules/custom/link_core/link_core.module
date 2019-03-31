@@ -131,6 +131,15 @@ function link_core_form_alter(&$form, FormStateInterface $form_state, $form_id) 
 				}
 			}
 		break;
+		case 'views_exposed_form':
+			// set a checkbox to true in the services view exposed form, controlling for ajax
+				$path = \Drupal::service('path.current')->getPath();
+				if ((!isset($_POST['_drupal_ajax']) || empty($path)) ||
+				 $_POST['view_path'] != '/views/ajax'
+				) {
+					$form['field_available_value']['#value'] = 1;
+				}
+		break;
 	}
 }
 

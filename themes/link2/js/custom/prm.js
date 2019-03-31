@@ -13,3 +13,10 @@ if (stickyNav !== null) {
   headroom.offset = 100;
   headroom.init();
 }
+(function($) {
+  $(document).ready(function () {
+    // debugger;
+    // $('[data-drupal-selector="edit-field-available-value"]').prop( "checked", true );
+    // debugger;
+  });
+})(jQuery);
