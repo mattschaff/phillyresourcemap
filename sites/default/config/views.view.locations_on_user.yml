@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_email
+    - field.storage.node.field_location_address
     - field.storage.node.field_location_geolocation
+    - field.storage.node.field_phone_number
     - node.type.location
   module:
+    - address
     - geolocation
     - node
     - user
@@ -832,10 +836,10 @@ display:
         access: false
         fields: false
       fields:
-        field_location_geolocation:
-          id: field_location_geolocation
-          table: node__field_location_geolocation
-          field: field_location_geolocation
+        field_location_address:
+          id: field_location_address
+          table: node__field_location_address
+          field: field_location_address
           relationship: none
           group_type: group
           admin_label: ''
@@ -880,37 +884,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: ''
-          type: geolocation_map
-          settings:
-            set_marker: '1'
-            title: ''
-            info_text: ''
-            replacement_patterns:
-              token_geolocation:
-                token_items: ''
-            google_map_settings:
-              height: 150px
-              width: 100%
-              type: ROADMAP
-              zoom: '14'
-              maxZoom: 18
-              minZoom: 0
-              mapTypeControl: 0
-              streetViewControl: 0
-              zoomControl: 0
-              rotateControl: 0
-              fullscreenControl: 0
-              scrollwheel: 0
-              gestureHandling: auto
-              draggable: 0
-              preferScrollingToZooming: 0
-              disableDoubleClickZoom: 0
-              style: ''
-              info_auto_display: 0
-              marker_icon_path: ''
-              disableAutoPan: 0
-            use_overridden_map_settings: 0
+          click_sort_column: langcode
+          type: address_default
+          settings: {  }
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -921,7 +897,132 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: geolocation_field
+          plugin_id: field
+        field_email:
+          id: field_email
+          table: node__field_email
+          field: field_email
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: "<br>\r\n<div class=\"email\">{{ field_email }}</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: 'div label'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_phone_number:
+          id: field_phone_number
+          table: node__field_phone_number
+          field: field_phone_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: "<br>\r\n<div class=\"phone\">{{ field_phone_number }}</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: 'div label'
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nid:
           id: nid
           table: node_field_data
@@ -1051,7 +1152,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"panel-heading col-md-10\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}?destination=/user\" >{{ title__value }}</a></h3></div>\r\n<div class=\"col-md-2\">\r\n<ul class=\"nav nav-tabs\">\r\n<li><div class=\"contextual\"><a href=\"/node/{{ nid }}/edit?destination=/user\"  class=\"trigger use-ajax\" title=\"Edit\" data-dialog-type=\"modal\"></a></div></li>\r\n</ul>\r\n</div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n{{ field_location_geolocation }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n<div class=\"service-btn-container\"><a href=\"/node/add/service?location={{ nid }}&destination=/user\" class=\"trigger use-ajax btn btn-primary btn-sm\" title=\"Edit\" data-dialog-type=\"modal\">Add Service</a></div>\r\n</div>\r\n</div>"
+            text: "<div class=\"panel-heading col-md-10\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}?destination=/user\" >{{ title__value }}</a></h3></div>\r\n<div class=\"col-md-2\">\r\n<ul class=\"nav nav-tabs\">\r\n<li><div class=\"contextual\"><a href=\"/node/{{ nid }}/edit?destination=/user\"  class=\"trigger use-ajax\" title=\"Edit\" data-dialog-type=\"modal\"></a></div></li>\r\n</ul>\r\n</div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n<div class=\"address\">{{ field_location_address }}</div>\r\n{{ field_email }}\r\n{{ field_phone_number }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n<div class=\"service-btn-container\"><a href=\"/node/add/service?location={{ nid }}&destination=/user\" class=\"trigger use-ajax btn btn-primary btn-sm\" title=\"Edit\" data-dialog-type=\"modal\">Add Service</a></div>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1114,7 +1215,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"panel-heading\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}\" >{{ title__value }}</a></h3></div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n{{ field_location_geolocation }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n</div>\r\n</div>"
+            text: "<div class=\"panel-heading\"><h3 class=\"location-name col-md-12\"><a href=\"{{ path('entity.node.canonical', {'node': nid}) }}\" >{{ title__value }}</a></h3></div>\r\n<div class =\"panel-body\">\r\n<div class=\"col-md-4\">\r\n<div class=\"address\">{{ field_location_address }}</div>\r\n{{ field_email }}\r\n{{ field_phone_number }}\r\n</div>\r\n<div class=\"col-md-8\">\r\n<h4>Services</h4>\r\n{{ view }}\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1180,4 +1281,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_location_geolocation'
+        - 'config:field.storage.node.field_email'
+        - 'config:field.storage.node.field_location_address'
+        - 'config:field.storage.node.field_phone_number'
