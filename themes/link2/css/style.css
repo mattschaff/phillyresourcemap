@@ -2424,6 +2424,7 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:after { display: none; }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:checked:before { color: white; font-weight: bold; top: 0px; }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox label input:checked { background-color: #1c63a0; }
+@media all and (max-width: 768px) { .view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-available-value { clear: both; } }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value { width: inherit; }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value label input { width: inherit; }
 .view-id-service_view .views-exposed-form .form-item.form-type-checkbox.form-type-checkbox.form-item-field-food-rsvp-value label input:before { content: 'Call Ahead'; }

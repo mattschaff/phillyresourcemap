@@ -78,6 +78,11 @@
             }
           }
         }
+        &.form-type-checkbox.form-item-field-available-value {
+          @media all and (max-width: 768px) {
+            clear: both;
+          }
+        }
         &.form-type-checkbox.form-item-field-food-rsvp-value {
           width: inherit;
           label input{
