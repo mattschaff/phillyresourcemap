@@ -194,3 +194,19 @@ function link_core_views_post_render(ViewExecutable $view, &$output) {
 		$view->setTitle($user->getAccountName());
 	}
 }
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function link_core_views_data_alter(&$data) {
+	// Add Open Now Filter.
+	$data['node']['open_now_filter'] = [
+		'title' => t('Open Now filter'),
+		'filter' => [
+			'title' => t('Open Now filter'),
+			'help' => 'filters services based on whether service is open now',
+			'field' => 'nid',
+			'id' => 'open_now_filter',
+		]
+	];
+}

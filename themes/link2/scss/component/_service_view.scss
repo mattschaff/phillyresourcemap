@@ -25,22 +25,24 @@
       &.form-type-checkbox {
         position: relative;
         margin-top: 0px;
-        width: 80px;
+        width: inherit;
         height: 40px;
         max-width: 125px;
         label {
-          //text-indent: -9999px;
           color: transparent;
           background:none;
           box-shadow: none;
           padding: 0px;
+          font-size: 1px;
+          width: inherit;
           input {
+            font-size: 14px;
             border-radius: 4px;
             border: 2px solid #1c63a0;
             background: none;
             color: #1c63a0;
             padding: 5px 7px;
-            position: absolute;
+            //position: absolute;
             //right: -24px;
             //background: white;
             //margin-right: 0px;
@@ -80,8 +82,16 @@
           width: inherit;
           label input{
             &:before {
-              content: 'Can Call Ahead';
-              width: 106px;
+              content: 'Call Ahead';
+            }
+            width: inherit;
+          }
+        }
+        &.form-type-checkbox.form-item-open-now-filter {
+          width: inherit;
+          label input{
+            &:before {
+              content: 'Open Now';
             }
             width: inherit;
           }
