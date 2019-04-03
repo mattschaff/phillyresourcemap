@@ -8,9 +8,15 @@
   }
 }
 .view-locations-on-user {
-  .view-header {
-    h4 {
-      color: gray;
+  .view-header,
+  .view-empty {
+    .well {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      h4 {
+        color: gray;
+        text-align: center;
+      }
     }
     .add-location-container {
       padding: 20px 0px;
