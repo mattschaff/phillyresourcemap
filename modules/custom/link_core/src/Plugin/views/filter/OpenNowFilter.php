@@ -66,9 +66,26 @@ class OpenNowFilter extends FilterPluginBase {
         ->condition('t.field_time_to', $seconds_since_midnight, '>=')
         ->execute()
         ->fetchAllKeyed(0,0);
-
+    // Add to the result all nodes without schedules set
+      // We treat these services as always open
+      // first get all services with schedules set
+      $subquery = $this->database->select('node_field_data', 'n');
+      $subquery->join('node__field_schedule', 's', 'n.nid = s.entity_id');
+      $sub_result = $subquery
+      ->fields('n' ['nid'])
+      ->condition('n.status', 1)
+      ->condition('n.type', 'service')->execute()->fetchAllKeyed(0,0);
+      $query = $this->database->select('node_field_data', 'n');
+      // then we get all services that do not have schedules set
+      $result2 = $query
+        ->fields('n' ['nid'])
+        ->condition('n.status', 1)
+        ->condition('n.type', 'service')
+        ->condition('n.nid', $sub_result, 'NOT IN')
+        ->execute()
+        ->fetchAllKeyed(0,0);
     // Add where clause to view query.
-      $this->query->addWhere('AND', 'node_field_data.nid', $result, 'IN');
+      $this->query->addWhere('AND', 'node_field_data.nid', array_merge($result2, $result), 'IN');
   }
 
   protected function valueForm(&$form, FormStateInterface $form_state) {
