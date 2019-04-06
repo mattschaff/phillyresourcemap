@@ -792,7 +792,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: '{{ field_location_address_address_line1 }}'
           hide_empty: false
           empty_zero: true
           hide_alter_empty: true
@@ -816,7 +816,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class =\"panel-body\">\r\n<div class=\"location-name col-xs-7\">{{ title_1__value }}</div>\r\n<div class=\"location-address col-xs-3\"> {{ field_location_address_address_line1 }}</div>\r\n<div class=\"col-xs-2\">{{ field_location_geolocation_proximity }}</div>\r\n</div>"
+            text: "<div class =\"panel-body\">\r\n<div class=\"location-name col-xs-7\">{{ title_1__value }}</div>\r\n<div class=\"location-opens col-xs-2\"> </div>\r\n<div class=\"col-xs-3\">{{ field_location_geolocation_proximity }}</div>\r\n</div>"
             make_link: true
             path: '{{ nothing }}?svtid={{ raw_arguments.tid }}'
             absolute: false
