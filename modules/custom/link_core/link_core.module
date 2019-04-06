@@ -209,4 +209,12 @@ function link_core_views_data_alter(&$data) {
 			'id' => 'open_now_filter',
 		]
 	];
+	$data['node']['open_when'] = array(
+    'title' => t('Open When'),
+    'field' => array(
+      'title' => t('Open When'),
+      'help' => t('Returns the next time a resource map service is open'),
+      'id' => 'open_when',
+    ),
+  );
 }
