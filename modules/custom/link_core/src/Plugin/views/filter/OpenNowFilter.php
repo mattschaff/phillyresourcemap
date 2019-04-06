@@ -11,7 +11,13 @@ use Drupal\Core\Database\Driver\mysql\Connection;
  * @ViewsFilter("open_now_filter")
  */
 class OpenNowFilter extends FilterPluginBase {
+  /**
+   * Database service
+   *
+   * @var \Drupal\Core\Database\Driver\mysql\Connection
+   */
   private $database;
+
   /**
    * Constructor
    *
