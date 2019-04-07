@@ -112,6 +112,15 @@
         .location-name {
           font-weight: bold;
         }
+        .location-opens {
+          font-size: 12px;
+          .open-now {
+            color: #22d622;
+          }
+          .open-sometime {
+            color: #949494;
+          }
+        }
       }
     }
   }

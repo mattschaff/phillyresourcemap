@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Drupal\link_core\Service\OpenTimes;
-
+use Drupal\node\Entity\Node;
 
 /**
  * Returns the next time a resource map service is open
@@ -67,8 +67,6 @@ class OpenWhen extends FieldPluginBase {
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
-    //$options['node_type'] = array('default' => 'service');
-
     return $options;
   }
 
@@ -83,8 +81,53 @@ class OpenWhen extends FieldPluginBase {
    * @{inheritdoc}
    */
   public function render(ResultRow $values) {
+    // Get service node.
+    $service_node = $values->_entity;
+    // Get the next time that service is open.
+    $open_time_array = $this->getNextOpenTime($service_node);
+    // Render output.
+    $output = '<div class="open-' . $open_time_array['class'] .'">' . $open_time_array['text'] . '</div>';
+    return [
+      '#type' => 'inline_template',
+      '#template' => $output,
+      ];
+  }
+
+  /**
+   * Gets the next time a service is open
+   *
+   * @param Drupal\node\Entity\Node $node
+   * @return array $open_time_array
+   */
+  protected function getNextOpenTime(Node $node){
+    // Get open times list.
     $list = $this->openTimesService->getList();
-    $node = $values->_entity;
-    return $this->t($list[0]);
+    $class = 'now';
+    $text = $this->t('Open Now');
+    if (isset($list[$node->id()])) {
+      $class = 'sometime';
+      $text = $this->t('Opens Thurs 12 p.m.');
+      // Get the current day and time.
+      // Day pointer = current day
+      // Loop through 0 to 6
+        // Loop through service days
+          // If current day == service day
+            // If open time < current time && close time > curren time
+              // Return open now.
+            // Else: iterator to next # loop.
+          // Else if day pointer == service day
+            // Next time = formatted open time for service day
+              // next_service_day = day pointer - current day
+                // if positive -> strtime("today +" . strval(next_service_day))
+                // else -> strtime("today +" . strval(7 + next_service_day)
+        // If Day pointer < 6
+            // Day pointer++
+        // Else: Day pointer = 0
+
+    }
+    return [
+      'class' => $class,
+      'text' => $text,
+    ];
   }
 }
