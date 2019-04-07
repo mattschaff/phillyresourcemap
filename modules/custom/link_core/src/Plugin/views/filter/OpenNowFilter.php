@@ -22,8 +22,9 @@ class OpenNowFilter extends FilterPluginBase {
    * Constructor
    *
    * @param array $configuration
-   * @param [type] $plugin_id
+   * @param string $plugin_id
    * @param [type] $plugin_definition
+   * @param \Drupal\Core\Database\Driver\mysql\Connection $database
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, Connection $database) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);

@@ -1,0 +1,5 @@
+services:
+  link_core.open_times:
+    class: Drupal\link_core\Service\OpenTimes
+    arguments:
+      - '@database'

@@ -7,9 +7,12 @@
 
 namespace Drupal\link_core\Plugin\views\field;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
+use Drupal\link_core\Service\OpenTimes;
+
 
 /**
  * Returns the next time a resource map service is open
@@ -19,6 +22,37 @@ use Drupal\views\ResultRow;
  * @ViewsField("open_when")
  */
 class OpenWhen extends FieldPluginBase {
+
+  /**
+   * OpenTimes service
+   *
+   * @var \Drupal\link_core\Service\OpenTimes
+   */
+  private $openTimesService;
+
+  /**
+   * Constructor
+   *
+   * @param array $configuration
+   * @param [type] $plugin_id
+   * @param [type] $plugin_definition
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, OpenTimes $openTimesService) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->openTimesService = $openTimesService;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('link_core.open_times')
+    );
+  }
 
   /**
    * @{inheritdoc}
@@ -49,7 +83,8 @@ class OpenWhen extends FieldPluginBase {
    * @{inheritdoc}
    */
   public function render(ResultRow $values) {
+    $list = $this->openTimesService->getList();
     $node = $values->_entity;
-    return $this->t('Meow');
+    return $this->t($list[0]);
   }
 }
