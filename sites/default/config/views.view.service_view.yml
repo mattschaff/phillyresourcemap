@@ -106,7 +106,7 @@ display:
           order: ASC
           exposed: false
           expose:
-            label: ''
+            label: 'Proximity (field_location_geolocation)'
           plugin_id: geolocation_sort_proximity
         title:
           id: title
@@ -866,7 +866,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class =\"panel-body\">\r\n  <div class=\"location-name col-xs-7\">{{ title_1__value }}</div>\r\n  <div class=\"col-xs-5\">\r\n    <div class=\"location-opens col-md-5\"> {{ open_when }}  </div>\r\n    <div class=\"col-md-7\">{{ field_location_geolocation_proximity }}</div>\r\n  </div>\r\n</div>"
+            text: "<div class =\"panel-body\">\r\n  <div class=\"location-name col-xs-7\">{{ title_1__value }}</div>\r\n  <div class=\"openwhen-location col-xs-5\">\r\n    <div class=\"location-opens col-md-5\"> {{ open_when }}  </div>\r\n    <div class=\"col-md-7\">{{ field_location_geolocation_proximity }}</div>\r\n  </div>\r\n</div>"
             make_link: true
             path: '{{ nothing }}?svtid={{ raw_arguments.tid }}'
             absolute: false

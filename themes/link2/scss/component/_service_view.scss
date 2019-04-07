@@ -121,6 +121,11 @@
             color: #949494;
           }
         }
+        @media screen and (max-width: #{$screen-md-min}) {
+          .openwhen-location {
+            text-align: right;
+          }
+        }
       }
     }
   }

@@ -2437,6 +2437,7 @@ html, .dialog-off-canvas-main-canvas { background: #f7f7f7; }
 .view-id-service_view .views-row .views-field .panel .location-opens { font-size: 12px; }
 .view-id-service_view .views-row .views-field .panel .location-opens .open-now { color: #22d622; }
 .view-id-service_view .views-row .views-field .panel .location-opens .open-sometime { color: #949494; }
+@media screen and (max-width: 992px) { .view-id-service_view .views-row .views-field .panel .openwhen-location { text-align: right; } }
 
 .view-service-list { padding-top: 30px; }
 .view-service-list .view-footer { color: #999999; font-size: 18px; clear: both; padding-top: 20px; }
