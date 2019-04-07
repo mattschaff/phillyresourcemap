@@ -86,7 +86,7 @@ class OpenWhen extends FieldPluginBase {
     // Get the next time that service is open.
     $open_time_array = $this->getNextOpenTime($service_node);
     // Render output.
-    $output = '<div class="open-' . $open_time_array['class'] .'">' . $open_time_array['text'] . '</div>';
+    $output = '<div data-next-open="' . $open_time_array['timestamp'] .'" class="open-' . $open_time_array['class'] .'">' . $open_time_array['text'] . '</div>';
     return [
       '#type' => 'inline_template',
       '#template' => $output,
@@ -130,11 +130,16 @@ class OpenWhen extends FieldPluginBase {
             && $data['field_time_to'] >= $seconds_since_midnight ) {
             // Return open now.
             $text = $this->t('Open Now');
+            $next_time = 0;
             $class = 'now';
             break 2;
           }
           // Else if day pointer == service day
           elseif ($day_pointer == $data['field_day_value']) {
+            // If day pointer == current day AND the service time is closed, go to next day
+            if ($data['field_day_value'] == $current_day && $data['field_time_to'] < $seconds_since_midnight) {
+              continue;
+            }
             // Next time = day pointer - current day
             $next_service_day = $day_pointer - $current_day;
             // If positive -> strtime("today +" . strval(next_service_day)).
@@ -164,6 +169,7 @@ class OpenWhen extends FieldPluginBase {
     return [
       'class' => $class,
       'text' => $text,
+      'timestamp' => $next_time,
     ];
   }
 }
