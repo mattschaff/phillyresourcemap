@@ -108,22 +108,58 @@ class OpenWhen extends FieldPluginBase {
       $class = 'sometime';
       $text = $this->t('Opens Thurs 12 p.m.');
       // Get the current day and time.
+      $config = \Drupal::config('system.date');
+      $config_data_default_timezone = $config->get('timezone.default');
+      date_default_timezone_set($config_data_default_timezone);
+      $time = time();
+      $current_day = date('w');
+      $time_at_midnight = $time - ($time - strtotime("today"));
+      // Seconds since midnight.
+      $seconds_since_midnight = $time - $time_at_midnight;
       // Day pointer = current day
+      $day_pointer = $current_day;
       // Loop through 0 to 6
+      $nid = $node->id();
+      for ($i=0; $i <= 6; $i++) {
         // Loop through service days
-          // If current day == service day
-            // If open time < current time && close time > curren time
-              // Return open now.
-            // Else: iterator to next # loop.
+        foreach ($list[$nid] as $day => $data ) {
+          // If current day == service day:
+          if ($data['field_day_value'] == $current_day &&
+            // If open time < current time && close time > current time:
+            $data['field_time_from']<= $seconds_since_midnight
+            && $data['field_time_to'] >= $seconds_since_midnight ) {
+            // Return open now.
+            $text = $this->t('Open Now');
+            $class = 'now';
+            break 2;
+          }
           // Else if day pointer == service day
-            // Next time = formatted open time for service day
-              // next_service_day = day pointer - current day
-                // if positive -> strtime("today +" . strval(next_service_day))
-                // else -> strtime("today +" . strval(7 + next_service_day)
+          elseif ($day_pointer == $data['field_day_value']) {
+            // Next time = day pointer - current day
+            $next_service_day = $day_pointer - $current_day;
+            // If positive -> strtime("today +" . strval(next_service_day)).
+            if ($next_service_day > 0) {
+              $next_time = strtotime("+" . strval($next_service_day) . ' day') + $data['field_time_from'] - $seconds_since_midnight;
+            }
+            // Else -> strtime("today +" . strval(7 + next_service_day).
+            else {
+              $next_time = strtotime("+" . strval($next_service_day) . ' day') + $data['field_time_from'] - $seconds_since_midnight;
+            }
+            $text = $this->t('Opens @time', [
+              '@time' => date('D g:i a', $next_time),
+            ]);
+            break 2;
+          }
+        }
         // If Day pointer < 6
-            // Day pointer++
+        if ($day_pointer < 6) {
+          $day_pointer++;
+        }
         // Else: Day pointer = 0
-
+        else {
+          $day_pointer = 0;
+        }
+      }
     }
     return [
       'class' => $class,
