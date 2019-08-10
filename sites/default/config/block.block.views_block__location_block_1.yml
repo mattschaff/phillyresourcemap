@@ -12,7 +12,7 @@ dependencies:
 id: views_block__location_block_1
 theme: link2
 region: content
-weight: -9
+weight: -8
 provider: null
 plugin: 'views_block:location-block_1'
 settings:
