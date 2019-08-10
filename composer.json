@@ -24,7 +24,8 @@
         "drupal/views_ajax_history": "^1.0",
         "twig/twig": "1.37.1",
         "cweagans/composer-patches": "^1.6",
-        "drupal/views_infinite_scroll": "^1.5"
+        "drupal/views_infinite_scroll": "^1.5",
+        "drush/drush": "^9.7"
     },
     "replace": {
         "drupal/core": "^8.6"
